@@ -1,0 +1,76 @@
+/* Results Section */
+.results-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto; /* Bạn có thể giảm bớt giá trị 'auto' để dịch về bên trái */
+    margin-left: 10px; /* Thêm margin-left để dịch các box sang trái */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+
+
+  /* Individual Result Cards */
+  .result-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Light background for card */
+    padding: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .result-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title Styling */
+  .result-title a {
+    text-decoration: none;
+    color: #1976d2; /* Blue for titles */
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .result-title a:hover {
+    text-decoration: underline;
+    color: #004ba0; /* Darker blue on hover */
+  }
+  
+  /* Description Styling */
+  .result-description {
+    margin-top: 8px;
+    color: #757575; /* Gray for description */
+    font-size: 0.95rem;
+  }
+  
+  /* Content Styling */
+  .result-content {
+    margin-top: 12px;
+    color: #424242; /* Darker gray for content text */
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  /* Highlight Styling */
+  .result-content em {
+    color: #e91e63; /* Pink for highlighted text */
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  /* Link to the article below the title */
+.result-link {
+    font-size: 1rem;
+    color: #e91e63; /* Pink color for the link */
+    font-style: italic;
+    text-decoration: underline;
+    margin-top: 8px; /* Add some space between title and link */
+    cursor: pointer;
+  }
+  
+  .result-link:hover {
+    color: #d81b60; /* Darker pink on hover */
+  }
+  

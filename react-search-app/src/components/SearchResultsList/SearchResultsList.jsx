@@ -1,5 +1,5 @@
 import "./SearchResultsList.css";
-import { SearchResult } from "./SearchResult";
+import { SearchResult } from "../SearchResult/SearchResult";
 
 export const SearchResultsList = ({ results }) => {
   return (

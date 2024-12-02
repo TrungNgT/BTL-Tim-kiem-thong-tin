@@ -11,12 +11,12 @@ const client = new Client({
     node: 'https://localhost:9200',
     auth: {
         username: 'elastic',
-        password: "paste mật khẩu elastic vào đây",
+        password: "Paste password vào đây",
     },
     tls: {
         requestCert: true,
-        ca: fs.readFileSync("Đường link trỏ tới thư mục elasticseasted" + '/configs/certs/http_ca.crt'),
-        rejectUnauthorized: true,
+        ca: fs.readFileSync('D:/Disk E/elasticsearch-8.15.2/config/certs/http_ca.crt'),
+        rejectUnauthorized: false,
     }
 });
 
@@ -36,40 +36,44 @@ run().catch(console.log);
 
 // Route để xử lý tìm kiếm
 app.get('/api/search', async (req, res) => {
-  const query = req.query.query || ''; // Lấy từ khóa tìm kiếm từ query param
+  const query = req.query.query || ''; // Get search keyword from query parameters
 
   if (!query) {
     return res.status(400).json({ message: 'No search term provided' });
   }
 
   try {
-    // Gửi truy vấn tới Elasticsearch
-    const { body } = await client.search({
-      index: 'healthsearch', // Tên index trong Elasticsearch
+    // Query Elasticsearch
+    const response = await client.search({
+      index: 'healthsearch', // Elasticsearch index name
       body: {
         query: {
           query_string: {
-            query: query,  // Từ khóa hoặc chuỗi truy vấn
-            fields: ["title", "description", "content"]  // Liệt kê các trường cần tìm kiếm (trừ link)
+            query: query,  // Search query
+            fields: ["title", "description", "content"]  // Fields to search (excluding "link")
           }
         },
         highlight: {
           fields: {
             content: {
-              fragment_size: 150, // Độ dài mỗi đoạn highlight
-              number_of_fragments: 3, // Số đoạn tối đa
+              fragment_size: 150, // Length of each highlight fragment
+              number_of_fragments: 3, // Maximum number of fragments
             },
           },
         },
       },
     });
-    console.log(body);
-    // Trả về danh sách kết quả (hits)
-    const results = body.hits.hits.map((hit) => ({
+
+    console.log(JSON.stringify(response, null, 2));
+
+    // Process results
+    const results = response.hits.hits.map((hit) => ({
       title: hit._source.title,
       description: hit._source.description,
       link: hit._source.link,
-      content: hit.highlight?.content?.join(' ') || hit._source.content.substring(0, 200) + '...',
+      content: hit.highlight?.content
+        ?.map(fragment => fragment.replace(/<em>/g, '').replace(/<\/em>/g, '')) // Remove <em> tags
+        .join(' ') || hit._source.content.substring(0, 200) + '...', // Fallback content
     }));
 
     res.json(results);

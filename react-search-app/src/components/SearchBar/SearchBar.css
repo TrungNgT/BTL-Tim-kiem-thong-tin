@@ -1,6 +1,7 @@
 .input-wrapper {
   width: 100%;
-  height: 2.5rem;
+  max-width: 1200px; /* Tăng độ dài tối đa lên 1000px */
+  height: 3rem; /* Giữ nguyên chiều cao */
   border: none;
   border-radius: 10px;
   padding: 0 15px;
@@ -25,4 +26,5 @@ input:focus {
 
 #search-icon {
   color: royalblue;
+  cursor: pointer; /* Biểu tượng vẫn hoạt động như nút */
 }
