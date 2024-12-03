@@ -11,11 +11,11 @@ const client = new Client({
     node: 'https://localhost:9200',
     auth: {
         username: 'elastic',
-        password: "paste mật khẩu elastic vào đây",
+        password: "FokPpOKqXaEC+ItgCdKQ",
     },
     tls: {
         requestCert: true,
-        ca: fs.readFileSync("Đường link trỏ tới thư mục elasticseasted" + '/configs/certs/http_ca.crt'),
+        ca: fs.readFileSync("D:/elasticsearch-8.15.2-windows-x86_64/elasticsearch-8.15.2/config/certs/http_ca.crt"),
         rejectUnauthorized: true,
     }
 });
@@ -23,7 +23,7 @@ const client = new Client({
 const run = async () => {
     try {
         await client.indices.exists({
-            index: 'healthsearch'
+            index: 'vinmec_doc'
         });
         return true;
     } catch (error) {
@@ -45,7 +45,7 @@ app.get('/api/search', async (req, res) => {
   try {
     // Gửi truy vấn tới Elasticsearch
     const { body } = await client.search({
-      index: 'healthsearch', // Tên index trong Elasticsearch
+      index: 'vinmec_doc', // Tên index trong Elasticsearch
       body: {
         query: {
           query_string: {
