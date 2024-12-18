@@ -8,22 +8,25 @@ app.use(cors());
 
 // Cấu hình client Elasticsearch
 const client = new Client({
-    node: 'https://localhost:9200',
+    node: 'http://localhost:9200',
     auth: {
         username: 'elastic',
-        password: "Paste password vào đây",
+        password: "FokPpOKqXaEC+ItgCdKQ",
     },
-    tls: {
-        requestCert: true,
-        ca: fs.readFileSync('D:/Disk E/elasticsearch-8.15.2/config/certs/http_ca.crt'),
-        rejectUnauthorized: false,
-    }
+    
+    // tls: {
+    //     requestCert: true,
+    //     ca: fs.readFileSync("D:/elasticsearch-8.15.2-windows-x86_64/elasticsearch-8.15.2/config/certs/http_ca.crt"),
+    //     rejectUnauthorized: false,
+    // }
 });
+
+export default client;
 
 const run = async () => {
     try {
         await client.indices.exists({
-            index: 'healthsearch'
+            index: "vietnamese_vinmec_doc"
         });
         return true;
     } catch (error) {
@@ -45,7 +48,7 @@ app.get('/api/search', async (req, res) => {
   try {
     // Query Elasticsearch
     const response = await client.search({
-      index: 'healthsearch', // Elasticsearch index name
+      index: "vietnamese_vinmec_doc", // Elasticsearch index name
       body: {
         query: {
           query_string: {
@@ -85,4 +88,4 @@ app.get('/api/search', async (req, res) => {
 
 // Khởi chạy server
 const PORT = 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));

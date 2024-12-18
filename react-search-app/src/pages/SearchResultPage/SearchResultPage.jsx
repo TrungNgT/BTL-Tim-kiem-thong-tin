@@ -13,6 +13,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./SearchResultPage.css";
+import localIP from "../../../../backend/getIP";
 
 const SearchResultPage = () => {
   const [results, setResults] = useState([]);
@@ -33,7 +34,7 @@ const SearchResultPage = () => {
       setError(null);
 
       try {
-        const response = await fetch(`http://localhost:5000/api/search?query=${encodeURIComponent(searchTerm)}`);
+        const response = await fetch(`http://${localIP}:5000/api/search?query=${encodeURIComponent(searchTerm)}`);
         if (!response.ok) {
           throw new Error("Failed to fetch results");
         }
