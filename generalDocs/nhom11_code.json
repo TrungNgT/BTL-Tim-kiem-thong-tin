@@ -1,5 +1,4 @@
 [
-
     {
         "title": "Câu 1: Mô phỏng phép nhân tay",
         "description": "Lập trình in ra màn hình mô phỏng phép nhân tay 2 số nguyên dương có 3 chữ số nhập từ bàn phím. Ví dụ với 2 số nhập vào là 763 và 589 thì phải in ra màn hình như sau:   Code mẫu:",
@@ -195,601 +194,599 @@
         "description": "Sử dụng khuôn mẫu viết các hàm nhập, xuất, sắp xếp mảng. Hàm main sử dụng các hàm khuôn mẫu này để nhập mảng n phần tử, in ra mảng trước và sau khi sắp xếp cho hai trường hợp: mảng số nguyên và mảng số thực. Code mẫu: Câu 1: Viết chương trình C++ để kiểm tra chẵn lẻ Code mẫu: Câu 2: Viết C++ kiểm tra số nguyên tố và armstrong. Code mẫu: Hy vọng những bài tập này sẽ hữu ích với các bạn. Chúc các bạn học tốt! Tham khảo thêm: Bài tập Java cơ bản, có lời giải code mẫu",
         "code": "#include <iostream>\n#include <math.h>\nusing namespace std;\n \nint checkPrimeNumber(int n);\nint checkArmstrongNumber(int n);\n \nint main(){\n \n    int num, flag;\n \n    cout<<\"Enter a positive integer: \";\n    cin>>num;\n \n     // Kiểm tra số\n    flag = checkPrimeNumber(num);\n    if (flag == 1)\n        cout<<num<<\" is a prime number\"<<endl;\n    else\n        cout<<num<<\" is not a prime number\"<<endl;\n \n    // Kiểm tra số Armstrong \n    flag = checkArmstrongNumber(num);\n    if (flag == 1)\n        cout<<num<<\" is a Armstrong number\"<<endl;\n    else\n        cout<<num<<\" is a not an Armstrong number\"<<endl;\n    return 0;\n}\n//hàm kiểm tra số nguyên tố\nint checkPrimeNumber(int num)\n{\n    int i, flag = 1;\n \n    for(i=2; i<=num/2; ++i)\n    {\n \n    // điều kiện cho số không phải nguyên tố\n        if(num%i == 0)\n        {\n            flag = 0;\n            break;\n        }\n    }\n    return flag;\n}\n \n//hàm kiểm tra số Armstrong \nint checkArmstrongNumber(int number)\n{\n    int originalNumber, remainder, result = 0, num = 0, flag;\n \n    originalNumber = number;\n \n    while (originalNumber != 0)\n    {\n        originalNumber /= 10;\n        ++num;\n    }\n \n    originalNumber = number;\n \n    while (originalNumber != 0)\n    {\n        remainder = originalNumber%10;\n        result += pow(remainder, num);\n        originalNumber /= 10;\n    }\n \n    // điều kiện cho số Armstrong \n    if(result == number)\n        flag = 1;\n    else\n        flag = 0;\n \n    return flag;\n}"
     },
-    [
-        {
-            "title": "Bài 1:",
-            "description": "Câu hỏi: Viết chương trình tìm tất cả các số chia hết cho 7 nhưng không phải bội số của 5, nằm trong đoạn 2000 và 3200 (tính cả 2000 và 3200). Các số thu được sẽ được in thành chuỗi trên một dòng, cách nhau bằng dấu phẩy. Gợi ý: Để giải quyết bài toán này, bạn có thể sử dụng vòng lặp for để duyệt qua tất cả các số trong đoạn từ 2000 đến 3200. Sau đó, bạn sử dụng câu lệnh if để kiểm tra xem mỗi số có chia hết cho 7 không và không phải là bội số của 5 không. Nếu đúng, thì in số đó ra màn hình. Code mẫu:",
-            "code": "j=[] #Tạo một danh sách rỗng để lưu kết quả\nfor i in range(2000, 3201): #Duyệt qua tất cả các số trong đoạn từ 2000 đến 3200\n    if (i%7==0) and (i%5!=0): #Kiểm tra xem số i có chia hết cho 7 và không phải là bội số của 5 không\n        j.append(str(i)) #Nếu đúng, thì thêm số i vào danh sách result\nprint (','.join(j)) #In ra màn hình danh sách result, các phần tử cách nhau bằng dấu phẩy"
-        },
-        {
-            "title": "Bài 2:",
-            "description": "Câu hỏi: Viết một chương trình có thể tính giai thừa của một số cho trước. Kết quả được in thành chuỗi trên một dòng, phân tách bởi dấu phẩy. Ví dụ, số cho trước là 8 thì kết quả đầu ra phải là 40320. Gợi ý: Trong trường hợp dữ liệu đầu vào được cung cấp, bạn hãy chọn cách để người dùng nhập số vào. Code mẫu:",
-            "code": "x=int(input(\"Nhập số cần tính giai thừa:\"))\ndef fact(x):\n    if x == 0:\n        return 1\n    return x * fact(x - 1)\nprint (fact(x))"
-        },
-        {
-            "title": "Bài 3:",
-            "description": "Câu hỏi: Với số nguyên n nhất định, hãy viết chương trình để tạo ra một dictionary chứa (i, i*i) như là số nguyên từ 1 đến n (bao gồm cả 1 và n) sau đó in ra dictionary này. Ví dụ: Giả sử số n là 8 thì đầu ra sẽ là: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}. Gợi ý: Code mẫu:",
-            "code": "n=int(input(\"Nhập vào một số:\"))\nd=dict()\nfor i in range(1,n+1):\n    d[i]=i*i\n    #Code by Quantrimang.com\n\nprint (d)"
-        },
-        {
-            "title": "Bài 4:",
-            "description": "Câu hỏi: Viết chương trình chấp nhận một chuỗi số, phân tách bằng dấu phẩy từ giao diện điều khiển, tạo ra một danh sách và một tuple chứa mọi số. Ví dụ: Đầu vào được cung cấp là 34,67,55,33,12,98 thì đầu ra là: ['34', '67', '55', '33', '12', '98']('34', '67', '55', '33', '12', '98') Gợi ý: Code mẫu:",
-            "code": "values=input(\"Nhập vào các giá trị:\")\nl=values.split(\",\")\nt=tuple(l)\nprint (l)\nprint (t)"
-        },
-        {
-            "title": "Bài 5:",
-            "description": "Câu hỏi: Định nghĩa một class có ít nhất 2 method: Thêm vào các hàm kiểm tra đơn giản để kiểm tra method của class. Ví dụ: Chuỗi nhập vào là quantrimang.com thì đầu ra phải là: QUANTRIMANG.COM Gợi ý: Code mẫu:",
-            "code": "class InputOutString(object):\n   def __init__(self):\n       self.s = \"\"\n\n   def getString(self):\n       self.s = input(\"Nhập chuỗi:\")\n# Code by Quantrimang.com\n   def printString(self):\n       print (self.s.upper())\n\nstrObj = InputOutString()\nstrObj.getString()\nstrObj.printString()"
-        },
-        {
-            "title": "Bài 6:",
-            "description": "Câu hỏi: Viết một method tính giá trị bình phương của một số. Gợi ý: Code mẫu: Vì đề bài không yêu cầu cụ thể bạn phải tính bình phương số có sẵn hay số nhập vào nên mình dùng cả hai.",
-            "code": "x=int(input(\"Nhập một số:\")) #nhập số cần tính bình phương từ giao diện\ndef square(num):  #định nghĩa bình phương của một số\n  return num ** 2\n# Code by Quantrimang.com\nprint (square(2)) #in bình phương của 2\nprint (square(3)) #in bình phương của 3\nprint (square(x)) #in bình phương của x"
-        },
-        {
-            "title": "Bài 7:",
-            "description": "Câu hỏi: Python có nhiều hàm được tích hợp sẵn, nếu không biết cách sử dụng nó, bạn có thể đọc tài liệu trực tuyến hoặc tìm vài cuốn sách. Nhưng Python cũng có sẵn tài liệu về hàm cho mọi hàm tích hợp trong Python. Yêu cầu của bài tập này là viết một chương trình để in tài liệu về một số hàm Python được tích hợp sẵn như abs(), int(), input() và thêm tài liệu cho hàm bạn tự định nghĩa. Gợi ý: Code mẫu:",
-            "code": "print (abs.__doc__)\nprint (int.__doc__)\nprint (input.__doc__)\n# Code by Quantrimang.com\ndef square(num):\n '''Trả lại giá trị bình phương của số được nhập vào.\n\n Số nhập vào phải là số nguyên.\n '''\n return num ** 2\n\nprint (square.__doc__)"
-        },
-        {
-            "title": "Bài 8:",
-            "description": "Câu hỏi: Định nghĩa một lớp gồm có tham số lớp và có cùng tham số instance Gợi ý: Code mẫu:",
-            "code": "class Person:\n # Định nghĩa lớp \"name\"\n name = \"Person\"\n # Code by Quantrimang.com\n def __init__(self, name = None):\n # self.name là biến instance\n self.name = name\n\njeffrey = Person(\"Jeffrey\")\nprint (\"%s name is %s\" % (Person.name, jeffrey.name))\n\nnico = Person()\nnico.name = \"Nico\"\nprint (\"%s name is %s\" % (Person.name, nico.name))"
-        },
-        {
-            "title": "Bài 9:",
-            "description": "Câu hỏi: Tính tuổi dựa trên ngày tháng năm sinh nhập vào. Ví dụ: Nhập vào ngày tháng năm sinh dạng y/m/d, hãy tính tuổi của người này. Gợi ý: Sử dụng module datetime. Sử dụng datetime, chúng ta có thể tìm tuổi bằng cách trừ năm sinh cho năm hiện tại. Code mẫu: Bài 10: Viết chương trình nhập: số giờ làm mỗi tuần, thù lao trên mỗi giờ làm tiêu chuẩn, từ đó tính ra số tiền thực lĩnh của nhân viên. Biết rằng: số giờ tiêu chuẩn mỗi tuần là 44 giờ, và mỗi giờ vượt chuẩn được trả gấp rưỡi so với giờ làm chuẩn. Code mẫu:",
-            "code": "so_gio_lam = float(input(\"Nhập số giờ làm mỗi tuần: \"))\nluong_gio = float(input(\"Nhập thù lao trên mỗi giờ làm tiêu chuẩn: \"))\n\ngio_tieu_chuan = 44  # Số giờ làm chuẩn mỗi tuần\ngio_vuot_chuan = max(0, so_gio_lam - gio_tieu_chuan)  # Số giờ làm vượt chuẩn mỗi tuần\nthuc_linh = gio_tieu_chuan * luong_gio + gio_vuot_chuan * luong_gio * 1.5  # Tính tổng thu nhập\nprint(f\"Số tiền thực lĩnh của nhân viên: {thuc_linh}\")"
-        },
-        {
-            "title": "Bài 1:",
-            "description": "Câu hỏi: Viết chương trình và in giá trị theo công thức cho trước: Q = √([(2 * C * D)/H]) (bằng chữ: Q bằng căn bậc hai của [(2 nhân C nhân D) chia H]. Với giá trị cố định của C là 50, H là 30. D là dãy giá trị tùy biến, được nhập vào từ giao diện người dùng, các giá trị của D được phân cách bằng dấu phẩy. Ví dụ: Giả sử chuỗi giá trị của D nhập vào là 100,150,180 thì đầu ra sẽ là 18,22,24. Gợi ý: Code mẫu:",
-            "code": "#!/usr/bin/env python\nimport math\nc=50\nh=30\nvalue = []\nitems=[x for x in input(\"Nhập giá trị của d: \").split(',')]\nfor d in items:\n    value.append(str(int(round(math.sqrt(2*c*float(d)/h)))))\n# Code by Quantrimang.com\nprint (','.join(value))"
-        },
-        {
-            "title": "Bài 2:",
-            "description": "Câu hỏi: Viết một chương trình có 2 chữ số, X, Y nhận giá trị từ đầu vào và tạo ra một mảng 2 chiều. Giá trị phần tử trong hàng thứ i và cột thứ j của mảng phải là i*j. Lưu ý: i=0,1,...,X-1; j=0,1,...,Y-1. Ví dụ: Giá trị X, Y nhập vào là 3,5 thì đầu ra là: [[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]] Gợi ý: Code mẫu:",
-            "code": "input_str = input(\"Nhập X, Y: \")\ndimensions=[int(x) for x in input_str.split(',')]\nrowNum=dimensions[0]\ncolNum=dimensions[1]\nmultilist = [[0 for col in range(colNum)] for row in range(rowNum)]\n# Viết bởi Quantrimang.com\nfor row in range(rowNum):\n    for col in range(colNum):\n        multilist[row][col]= row*col\n\nprint (multilist)"
-        },
-        {
-            "title": "Bài 3:",
-            "description": "Câu hỏi: Viết một chương trình chấp nhận chuỗi từ do người dùng nhập vào, phân tách nhau bởi dấu phẩy và in những từ đó thành chuỗi theo thứ tự bảng chữ cái, phân tách nhau bằng dấu phẩy. Giả sử đầu vào được nhập là: without,hello,bag,world, thì đầu ra sẽ là: bag,hello,without,world. Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
-            "code": "items=[x for x in input(\"Nhập một chuỗi: \").split(',')]\nitems.sort()\nprint (','.join(items))"
-        },
-        {
-            "title": "Bài 4:",
-            "description": "Câu hỏi: Viết một chương trình chấp nhận chuỗi là các dòng được nhập vào, chuyển các dòng này thành chữ in hoa và in ra màn hình. Giả sử đầu vào là: Hello worldPractice makes perfect Thì đầu ra sẽ là: HELLO WORLDPRACTICE MAKES PERFECT Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
-            "code": "lines = []\nwhile True:\n   s = input()\n   if s:\n      lines.append(s.upper())\n   else:\n      break;\n# Bài Python 12, Code by Quantrimang.com\nfor sentence in lines:\n    print (sentence)"
-        },
-        {
-            "title": "Bài 5:",
-            "description": "Câu hỏi: Viết một chương trình chấp nhận đầu vào là một chuỗi các từ tách biệt bởi khoảng trắng, loại bỏ các từ trùng lặp, sắp xếp theo thứ tự bảng chữ cái, rồi in chúng. Giả sử đầu vào là: hello world and practice makes perfect and hello world again Thì đầu ra là: again and hello makes perfect practice world Gợi ý: Code mẫu:",
-            "code": "s = input(\"Nhập chuỗi của bạn: \")\nwords = [word for word in s.split(\" \")]\nprint (\" \".join(sorted(list(set(words)))))"
-        },
-        {
-            "title": "Bài 6:",
-            "description": "Câu hỏi: Viết một chương trình chấp nhận đầu vào là chuỗi các số nhị phân 4 chữ số, phân tách bởi dấu phẩy, kiểm tra xem chúng có chia hết cho 5 không. Sau đó in các số chia hết cho 5 thành dãy phân tách bởi dấu phẩy. Ví dụ đầu vào là: 0100,0011,1010,1001 Đầu ra sẽ là: 1010 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
-            "code": "value = []\nitems=[x for x in input(\"Nhập các số nhị phân: \").split(',')]\nfor p in items:\n    intp = int(p, 2)\n    if not intp%5:\n    value.append(p)\n# Bài tập Python 14, viết bởi Quantrimang.com\nprint (','.join(value))"
-        },
-        {
-            "title": "Bài 7:",
-            "description": "Câu hỏi: Viết một chương trình tìm tất cả các số trong đoạn 1000 và 3000 (tính cả 2 số này) sao cho tất cả các chữ số trong số đó là số chẵn. In các số tìm được thành chuỗi cách nhau bởi dấu phẩy, trên một dòng. Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
-            "code": "values = []\nfor i in range(1000, 3001):\n    s = str(i)\n    if (int(s[0])%2==0) and (int(s[1])%2==0) and (int(s[2])%2==0) and (int(s[3])%2==0):\n values.append(s)\n# Bài tập Python 15, Code by Quantrimang.com\nprint (\",\".join(values))"
-        },
-        {
-            "title": "Bài 8:",
-            "description": "Câu hỏi: Viết một chương trình chấp nhận đầu vào là một câu, đếm số chữ cái và chữ số trong câu đó. Giả sử đầu vào sau được cấp cho chương trình: hello world! 123 Thì đầu ra sẽ là: Số chữ cái là: 10Số chữ số là: 3 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
-            "code": "s = input(\"Nhập câu của bạn: \")\n# Bài tập Python 16, Code by Quantrimang.com\nd={\"DIGITS\":0, \"LETTERS\":0}\nfor c in s:\n    if c.isdigit():\n        d[\"DIGITS\"]+=1\n    elif c.isalpha():\n        d[\"LETTERS\"]+=1\n    else:\n        pass\nprint (\"Số chữ cái là:\", d[\"LETTERS\"])\nprint (\"Số chữ số là:\", d[\"DIGITS\"])"
-        },
-        {
-            "title": "Bài 9:",
-            "description": "Câu hỏi: Viết một chương trình chấp nhận đầu vào là một câu, đếm chữ hoa, chữ thường. Giả sử đầu vào là: Quản Trị Mạng Thì đầu ra là: Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
-            "code": "s = input(\"Nhập câu của bạn: \")\nd={\"UPPER CASE\":0, \"LOWER CASE\":0}\n# Code by Quantrimang.com\nfor c in s:\n    if c.isupper():\n        d[\"UPPER CASE\"]+=1\n    elif c.islower():\n        d[\"LOWER CASE\"]+=1\n    else:\n        pass\nprint (\"Chữ hoa:\", d[\"UPPER CASE\"])\nprint (\"Chữ thường:\", d[\"LOWER CASE\"])"
-        },
-        {
-            "title": "Bài 10:",
-            "description": "Câu hỏi: Viết một chương trình tính giá trị của a+aa+aaa+aaaa với a là số được nhập vào bởi người dùng. Giả sử a được nhập vào là 1 thì đầu ra sẽ là: 1234 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
-            "code": "a = input(\"Nhập số a: \")\nn1 = int( \"%s\" % a )\nn2 = int( \"%s%s\" % (a,a) )\nn3 = int( \"%s%s%s\" % (a,a,a) )\nn4 = int( \"%s%s%s%s\" % (a,a,a,a) )\n# Bài tập Python 18, Code by Quantrimang.com\nprint (\"Tổng cần tính là: \",n1+n2+n3+n4)"
-        },
-        {
-            "title": "Bài 11:",
-            "description": "Câu hỏi: Sử dụng một danh sách để lọc các số lẻ từ danh sách được người dùng nhập vào. Giả sử đầu vào là: 1,2,3,4,5,6,7,8,9 thì đầu ra phải là: 1,3,5,7,9 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
-            "code": "values = input(\"Nhập dãy số của bạn, cách nhau bởi dấu phẩy: \")\nnumbers = [x for x in values.split(\",\") if int(x)%2!=0]\nprint (\",\".join(numbers))"
-        },
-        {
-            "title": "Bài 12:",
-            "description": "Câu hỏi: Viết chương trình tính số tiền thực của một tài khoản ngân hàng dựa trên nhật ký giao dịch được nhập vào từ giao diện điều khiển. Định dạng nhật ký được hiển thị như sau: Giả sử đầu vào được cung cấp là: Thì đầu ra sẽ là: 500 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
-            "code": "import sys\nnetAmount = 0\n# Bài tập Python 20, Code by Quantrimang.com\nwhile True:\n    s = input(\"Nhập nhật ký giao dịch: \")\n    if not s:\n        break\n    values = s.split(\" \")\n    operation = values[0]\n    amount = int(values[1])\n    if operation==\"D\":\n        netAmount+=amount\n    elif operation==\"W\":\n        netAmount-=amount\n    else:\n        pass\nprint (netAmount)"
-        },
-        {
-            "title": "Bài 13:",
-            "description": "Viết chương trình Python nhập một dãy số nguyên, sau đó kiểm tra xem nó có khả đối xứng không? Nếu có, hãy biến đổi nó để được một dãy đối xứng. Gợi ý: Code mẫu:",
-            "code": "def kiem_tra_doi_xung(lst):\n    return lst == lst[::-1]\n\ndef sx_doi_xung(lst):\n    if kiem_tra_doi_xung(lst):\n        return lst\n    else:\n        for i in range(len(lst)//2):\n            if lst[i] != lst[-i-1]:\n                for j in range(i+1, len(lst)):\n                    if lst[j] == lst[-i-1]:\n                        lst[i], lst[j] = lst[j], lst[i]\n                        break\n        return lst\n\nlst = list(map(int, input(\"Nhập dãy số nguyên, cách nhau bởi dấu cách: \").split()))\n\nif kiem_tra_doi_xung(lst):\n    print(\"Dãy số đã đối xứng.\")\nelse:\n    new_lst = sx_doi_xung(lst)\n    if kiem_tra_doi_xung(new_lst):\n        print(\"Dãy số đã khả đối xứng và biến đổi thành dãy số đối xứng: \", new_lst)\n    else:\n        print(\"Dãy số không khả đối xứng.\")"
-        },
-        {
-            "title": "Bài 14:",
-            "description": "Viết chương trình Python nhập một mảng hai chiều các số thực A (m hàng, n cột) từ bàn phím. a. Tìm giá trị lớn nhất và nhỏ nhất trên mỗi cột b. Tìm phần tử lớn nhất và phần tử nhỏ nhất của mảng A cùng các chỉ số hàng và cột của 2 phần tử này. c. Trong mảng A có bao nhiêu phần tử bằng phần tử lớn nhất. Gợi ý: Code mẫu dùng hàm numpy: Code mẫu dùng các hàm thông thường:",
-            "code": "# Hàm nhập mảng A từ bàn phím\ndef input_array(m, n):\n    A = []\n    for i in range(m):\n        row = list(map(float, input(f\"Nhập hàng {i+1}, cách nhau bởi dấu cách: \").split()))\n        A.append(row)\n    return A\n\n# Hàm tìm giá trị lớn nhất và nhỏ nhất trên mỗi cột của mảng A\ndef find_max_min_per_col(A):\n    m, n = len(A), len(A[0])\n    max_per_col = [max([A[i][j] for i in range(m)]) for j in range(n)]\n    min_per_col = [min([A[i][j] for i in range(m)]) for j in range(n)]\n    return max_per_col, min_per_col\n\n# Hàm tìm phần tử lớn nhất và nhỏ nhất của mảng A cùng các chỉ số hàng và cột\ndef find_max_min_index(A):\n    max_val, min_val = A[0][0], A[0][0]\n    max_row, max_col, min_row, min_col = 0, 0, 0, 0\n    m, n = len(A), len(A[0])\n    for i in range(m):\n        for j in range(n):\n            if A[i][j] > max_val:\n                max_val = A[i][j]\n                max_row, max_col = i, j\n            if A[i][j] < min_val:\n                min_val = A[i][j]\n                min_row, min_col = i, j\n    return max_val, max_row, max_col, min_val, min_row, min_col\n\n# Hàm đếm số phần tử trong mảng A bằng phần tử lớn nhất\ndef count_max_value(A):\n    max_val = max([max(row) for row in A])\n    count = 0\n    for row in A:\n        count += row.count(max_val)\n    return count\n\n# Nhập mảng A từ bàn phím\nm, n = map(int, input(\"Nhập số hàng và số cột của mảng A, cách nhau bởi dấu cách: \").split())\nA = input_array(m, n)\n\n# Tìm giá trị lớn nhất và nhỏ nhất trên mỗi cột của mảng A\nmax_per_col, min_per_col = find_max_min_per_col(A)\nprint(\"Giá trị lớn nhất trên mỗi cột: \", max_per_col)\nprint(\"Giá trị nhỏ nhất trên mỗi cột: \", min_per_col)\n\n# Tìm phần tử lớn nhất và nhỏ nhất của mảng A cùng các chỉ số hàng và cột\nmax_val, max_row, max_col, min_val, min_row, min_col = find_max_min_index(A)\nprint(f\"Phần tử lớn nhất: {max_val}, hàng: {max_row+1}, cột: {max_col+1}\")\nprint(f\"Phần tử nhỏ nhất: {min_val}, hàng: {min_row+1}, cột: {min_col+1}\")\n\n# Đếm số phần tử trong mảng\ncount = count_max_value(A)\nprint(f\"Số phần tử bằng giá trị lớn nhất ({max_val}) trong mảng A: {count}\")"
-        },
-        {
-            "title": "Bài 1:",
-            "description": "Câu hỏi: Một website yêu cầu người dùng nhập tên người dùng và mật khẩu để đăng ký. Viết chương trình để kiểm tra tính hợp lệ của mật khẩu mà người dùng nhập vào. Các tiêu chí kiểm tra mật khẩu bao gồm: 1. Ít nhất 1 chữ cái nằm trong [a-z]2. Ít nhất 1 số nằm trong [0-9]3. Ít nhất 1 kí tự nằm trong [A-Z]4. Ít nhất 1 ký tự nằm trong [$ # @]5. Độ dài mật khẩu tối thiểu: 66. Độ dài mật khẩu tối đa: 12 Chương trình phải chấp nhận một chuỗi mật khẩu phân tách nhau bởi dấu phẩy và kiểm tra xem chúng có đáp ứng những tiêu chí trên hay không. Mật khẩu hợp lệ sẽ được in, mỗi mật khẩu cách nhau bởi dấu phẩy. Ví dụ mật khẩu nhập vào chương trình là: ABd1234@1,a F1#,2w3E*,2We3345 Thì đầu ra sẽ là: ABd1234@1 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
-            "code": "import re\nvalue = []\nitems=[x for x in input(\"Nhập mật khẩu: \").split(',')]\n# Bài tập Python 21, Code by Quantrimang.com\nfor p in items:\n    if len(p)<6 or len(p)>12:\n        continue\n    else:\n        pass\n    if not re.search(\"[a-z]\",p):\n        continue\n    elif not re.search(\"[0-9]\",p):\n        continue\n    elif not re.search(\"[A-Z]\",p):\n        continue\n    elif not re.search(\"[$#@]\",p):\n        continue\n    elif re.search(\"\\s\",p):\n        continue\n    else:\n        pass\n    value.append(p)\nprint (\",\".join(value))"
-        },
-        {
-            "title": "Bài 2:",
-            "description": "Câu hỏi: Viết chương trình sắp xếp tuple (name, age, score) theo thứ tự tăng dần, name là string, age và height là number. Tuple được nhập vào bởi người dùng. Tiêu chí sắp xếp là: Sắp xếp theo name sau đó sắp xếp theo age, sau đó sắp xếp theo score. Ưu tiên là tên > tuổi > điểm. Nếu đầu vào là: Tom,19,80John,20,90Jony,17,91Jony,17,93Json,21,85 Thì đầu ra sẽ là: [('John', '20', '90'), ('Jony', '17', '91'), ('Jony', '17', '93'), ('Json', '21', '85'), ('Tom', '19', '80')] Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Sử dụng itemgetter để chấp nhận nhiều key sắp xếp. Code mẫu:",
-            "code": "from operator import itemgetter, attrgetter\n# Bài tập Python 22 Code by Quantrimang.com\nl = []\nwhile True:\n    s = input()\n    if not s:\n       break\n    l.append(tuple(s.split(\",\")))\n\nprint (sorted(l, key=itemgetter(0,1,2)))"
-        },
-        {
-            "title": "Bài 3:",
-            "description": "Câu hỏi: Xác định một class với generator có thể lặp lại các số nằm trong khoảng 0 và n, và chia hết cho 7. Gợi ý: Sử dụng yield. Code mẫu:",
-            "code": "def putNumbers(n):\n    i = 0\n    while i<n:\n        j=i\n        i=i+1\n        if j%7==0:\n            yield j\n# Bài tập Python 23 Code by Quantrimang.com\nfor i in putNumbers (100):\n     print (i)"
-        },
-        {
-            "title": "Bài 4:",
-            "description": "Câu hỏi: Một Robot di chuyển trong mặt phẳng bắt đầu từ điểm đầu tiên (0,0). Robot có thể di chuyển theo hướng UP, DOWN, LEFT và RIGHT với những bước nhất định. Dấu di chuyển của robot được đánh hiển thị như sau: UP 5 DOWN 3 LEFT 3 RIGHT 3 Các con số sau phía sau hướng di chuyển chính là số bước đi. Hãy viết chương trình để tính toán khoảng cách từ vị trí hiện tại đến vị trí đầu tiên, sau khi robot đã di chuyển một quãng đường. Nếu khoảng cách là một số thập phân chỉ cần in só nguyên gần nhất. Ví dụ: Nếu tuple sau đây là input của chương trình: UP 5DOWN 3LEFT 3RIGHT 2 thì đầu ra sẽ là 2. Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
-            "code": "import math\npos = [0,0]\nwhile True:\n    s = input()\n    if not s:\n        break\n    movement = s.split(\" \")\n    direction = movement[0]\n    steps = int(movement[1])\n    if direction==\"UP\":\n        pos[0]+=steps\n    elif direction==\"DOWN\":\n        pos[0]-=steps\n    elif direction==\"LEFT\":\n        pos[1]-=steps\n    elif direction==\"RIGHT\":\n        pos[1]+=steps\n    else:\n        pass\n# Bài tập Python 24 Code by Quantrimang.com\nprint (int(round(math.sqrt(pos[1]**2+pos[0]**2))))"
-        },
-        {
-            "title": "Bài 5:",
-            "description": "Câu hỏi: Viết chương trình tính tần suất các từ từ input. Output được xuất ra sau khi đã sắp xếp theo bảng chữ cái. Giả sử input là: New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3. Thì output phải là: 2:23.:13?:1New:1Python:5Read:1and:1between:1choosing:1or:2to:1 Gợi ý: Trong trường hợp dữ liệu đầu vào được cung cấp cho câu hỏi, nó phải được giả định là một input được nhập từ giao diện điều khiển. Code mẫu:",
-            "code": "freq = {} # frequency of words in text\nline = input()\nfor word in line.split():\n    freq[word] = freq.get(word,0)+1\n    # Bài tập Python 25 Code by Quantrimang.com\nwords = sorted(freq.keys())\nfor w in words:\n    print (\"%s:%d\" % (w,freq[w]))"
-        },
-        {
-            "title": "Bài 1:",
-            "description": "Câu hỏi: Định nghĩa 1 hàm có thể tính tổng hai số. Gợi ý: Định nghĩa 1 hàm với 2 số là đối số. Bạn có thể tính tổng trong hàm và trả về giá trị. Code mẫu:",
-            "code": "def SumFunction(number1, number2): #định nghĩa hàm tính tổng\n    return number1+number2\nprint (SumFunction(5,7)) #in tổng 2 số 5 và 7"
-        },
-        {
-            "title": "Bài 2:",
-            "description": "Câu hỏi: Định nghĩa một hàm có thể chuyển số nguyên thành chuỗi và in nó ra giao diện điều khiển Gợi ý: Sử dụng str() để chuyển đổi một số thành chuỗi. Code mẫu:",
-            "code": "def printValue(n):\n    print (str(n))\nprintValue(3)"
-        },
-        {
-            "title": "Bài 3:",
-            "description": "Câu hỏi: Định nghĩa hàm có thể nhận hai số nguyên trong dạng chuỗi và tính tổng của chúng, sau đó in tổng ra giao diện điều khiển. Gợi ý: Sử dụng int() để chuyển đổi một chuỗi thành số nguyên. Code mẫu:",
-            "code": "def printValue(s1,s2):\n    print (int(s1)+int(s2))\nprintValue(\"3\",\"4\") #Kết quả là 7"
-        },
-        {
-            "title": "Bài 4:",
-            "description": "Câu hỏi: Định nghĩa hàm có thể nhận 2 chuỗi từ input và nối chúng sau đó in ra giao diện điều khiển Gợi ý: Sử dụng + để nối các chuỗi. Code mẫu:",
-            "code": "def printValue(s1,s2):\n    print (s1+s2)\nprintValue(\"3\",\"4\") #Kết quả là 34"
-        },
-        {
-            "title": "Bài 5:",
-            "description": "Câu hỏi: Định nghĩa một hàm có input là 2 chuỗi và in chuỗi có độ dài lớn hơn trong giao diện điều khiển. Nếu 2 chuỗi có chiều dài như nhau thì in tất cả các chuỗi theo dòng. Gợi ý: Sử dụng hàm len() để lấy chiều dài của một chuỗi Code mẫu:",
-            "code": "def printValue(s1,s2): \n# Bài tập Python 30 Code by Quantrimang.com\n    len1 = len(s1) \n    len2 = len(s2)\n    if len1>len2:\n        print (s1)\n    elif len2>len1:\n        print (s2)\n    else:\n        print(s1)\n        print (s2) \nprintValue(\"one\",\"three\")"
-        },
-        {
-            "title": "Bài 6:",
-            "description": "Câu hỏi: Định nghĩa hàm có thể chấp nhận input là số nguyên và in \"Đây là một số chẵn\" nếu nó chẵn và in \"Đây là một số lẻ\" nếu là số lẻ. Gợi ý: Sử dụng toán tử % để kiểm tra xem số đó chẵn hay lẻ. Code mẫu:",
-            "code": "def checkValue(n): \n    if n%2 == 0: \nprint (\"Đây là một số chẵn\") \n    else: \n       print (\"Đây là một số lẻ\") \ncheckValue(7)"
-        },
-        {
-            "title": "Bài 7:",
-            "description": "Câu hỏi: Định nghĩa một hàm có thể in dictionary chứa key là các số từ 1 đến 3 (bao gồm cả hai số) và các giá trị bình phương của chúng. Gợi ý: Code mẫu: Chạy code trên bạn sẽ được kết quả là một dictionary như sau: {1: 1, 2: 4, 3: 9}. Nếu chưa hiểu lắm về kiểu dữ liệu dictionary này bạn hãy đọc lại bài: Kiểu dữ liệu trong Python: chuỗi, số, list, tuple, set và dictionary",
-            "code": "def printDict():\n    d=dict() \n    d[1]=1 \n    d[2]=2**2 \n    d[3]=3**2 \n    print (d) \n# Bài tập Python 32, Code by Quantrimang.com\nprintDict()"
-        },
-        {
-            "title": "Bài 8:",
-            "description": "Câu hỏi: Định nghĩa một hàm có thể in dictionary chứa các key là số từ 1 đến 20 (bao gồm cả 1 và 20) và các giá trị bình phương của chúng. Gợi ý: Code mẫu: Kết quả khi chạy code trên là: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144, 13: 169, 14: 196, 15: 225, 16: 256, 17: 289, 18: 324, 19: 361, 20: 400}",
-            "code": "def printDict():\n    d=dict() \n    for i in range(1,21): \n       d[i]=i**2 \n    print (d) \n# Bài tập Python 33, Code by Quantrimang.com\nprintDict()"
-        },
-        {
-            "title": "Bài 9:",
-            "description": "Câu hỏi: Định nghĩa một hàm có thể tạo dictionary, chứa các key là số từ 1 đến 20 (bao gồm cả 1 và 20) và các giá trị bình phương của chúng. Hàm chỉ in các giá trị mà thôi. Gợi ý: Code mẫu: Kết quả bạn nhận được khi chạy code trên là các giá trị bình phương của số từ 1 đến 20.",
-            "code": "def printDict():\n    d=dict() \n    for i in range(1,21): \n d[i]=i**2 \n    for (k,v) in d.items(): \n       print (v) \n# Bài tập Python 34, Code by Quantrimang.com\nprintDict()"
-        },
-        {
-            "title": "Bài 10:",
-            "description": "Câu hỏi: Định nghĩa một hàm có thể tạo ra một dictionary chứa key là những số từ 1 đến 20 (bao gồm cả 1 và 20) và các giá trị bình phương của key. Hàm chỉ cần in các key. Gợi ý: Tương tự như bài 34. Code mẫu: Chạy code trên bạn sẽ nhận được các key trong dictionary, chính là các số từ 1 đến 20.",
-            "code": "def printDict():\n d=dict() \n for i in range(1,21): \n d[i]=i**2 \n for k in d.keys(): \n       print (k) \n# Bài Python 35, Code by Quantrimang.com\nprintDict()"
-        },
-        {
-            "title": "Bài 11:",
-            "description": "Câu hỏi: Định nghĩa một hàm có thể tạo và in list chứa các giá trị bình phương của các số từ 1 đến 20 (tính cả 1 và 20). Gợi ý: Code mẫu: Chạy code trên bạn sẽ nhận được một list chứa các giá trị bình phương của các số từ 1 đến 20. Thụt đầu dòng trong Python rất quan trọng, nếu code trên bạn chỉ cần sửa 1 chút như sau: Thì sẽ nhận được output hình tháp khá đẹp như này:",
-            "code": "def printList():\n    li=list()\n    for i in range(1,21):\n        li.append(i**2)\n        print (li)\n# Bài Python 36, Code by Quantrimang.com\nprintList()"
-        },
-        {
-            "title": "Bài 12:",
-            "description": "Câu hỏi: Định nghĩa một hàm có thể tạo list chứa các giá trị bình phương của các số từ 1 đến 20 (bao gồm cả 1 và 20) và in 5 mục đầu tiên trong list. Gợi ý: Code mẫu: Chạy code trên bạn sẽ nhận được một list chứa giá trị bình phương của các số từ 1 đến 5.",
-            "code": "def printList():\n    li=list() \n    for i in range(1,21): \n li.append(i**2) \n    print (li[:5]) \n# Bài Python 37, Code by Quantrimang.com\nprintList()"
-        },
-        {
-            "title": "Bài 13:",
-            "description": "Câu hỏi: Định nghĩa một hàm có thể tạo ra list chứa các giá trị bình phương của các số từ 1 đến 20 (bao gồm cả 1 và 20), rồi in 5 mục cuối cùng trong list. Gợi ý: Tương tự bài 37. Code mẫu: Khi chạy code trên bạn sẽ nhận được list chứa giá trị bình phương của 16, 17, 18, 19, 20.",
-            "code": "def printList():\n    li=list()\n    for i in range(1,21):\n        li.append(i**2)\n    print (li[-5:]) \n# Bài Python 38, Code by Quantrimang.com\nprintList()"
-        },
-        {
-            "title": "Bài 14:",
-            "description": "Câu hỏi: Định nghĩa một hàm có thể tạo list chứa giá trị bình phương của các số từ 1 đến 20 (bao gồm cả 1 và 20). Sau đó in tất cả các giá trị của list, trừ 5 mục đầu tiên. Gợi ý: Tương tư bài 37, 38. Code mẫu: Kết quả:",
-            "code": "[36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400]"
-        },
-        {
-            "title": "Bài 15:",
-            "description": "Câu hỏi: Định nghĩa 1 hàm có thể tạo và in một tuple chứa các giá trị bình phương của các số từ 1 đến 20 (tính cả 1 và 20). Gợi ý: Code mẫu: Kết quả:",
-            "code": "(1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400)"
-        },
-        {
-            "title": "Bài 16:",
-            "description": "Câu hỏi: Với tuple (1,2,3,4,5,6,7,8,9,10) cho trước, viết một chương trình in một nửa số giá trị đầu tiên trong 1 dòng và 1 nửa số giá trị cuối trong 1 dòng. Gợi ý: Sử dụng [n1:n2] để lấy một phần từ tuple. Code mẫu: Kết quả:",
-            "code": "(1, 2, 3, 4, 5)\n(6, 7, 8, 9, 10)"
-        },
-        {
-            "title": "Bài 17:",
-            "description": "Câu hỏi: Viết một chương trình để tạo tuple khác, chứa các giá trị là số chẵn trong tuple (1,2,3,4,5,6,7,8,9,10) cho trước. Gợi ý: Code mẫu: Kết quả:",
-            "code": "(2, 4, 6, 8, 10)"
-        },
-        {
-            "title": "Bài 18:",
-            "description": "Câu hỏi: Viết một chương trình để tạo ra và in tuple chứa các số chẵn được lấy từ tuple (1,2,3,4,5,6,7,8,9,10). Gợi ý: Code mẫu: Kết quả: (2, 4, 6, 8, 10)",
-            "code": "tp=(1,2,3,4,5,6,7,8,9,10)\nli=list()\nfor i in tp:\n    if tp[i-1]%2==0:\n        li.append(tp[i-1])\n        tp2=tuple(li)\nprint (tp2)"
-        },
-        {
-            "title": "Bài 19:",
-            "description": "Yêu cầu: Viết một chương trình Python nhận chuỗi nhập vào bởi người dùng, in \"Yes\" nếu chuỗi là \"yes\" hoặc \"YES\" hoặc \"Yes\", nếu không in \"No\". Gợi ý: Code mẫu:",
-            "code": "s = input (\"Nhập chuỗi: \")\nif s == \"yes\" or s == \"YES\" or s == \"Yes\":\n   print (\"Yes\")\nelse:\n    print (\"No\")"
-        },
-        {
-            "title": "Bài 20:",
-            "description": "Yêu cầu: Viết chương trình Python có thể lọc các số chẵn trong danh sách sử dụng hàm filter. Danh sách là [1,2,3,4,5,6,7,8,9,10]. Gợi ý: Code mẫu: Kết quả: [2, 4, 6, 8, 10] Lưu ý: Trong các phiên bản Python trước, bạn chỉ cần dùng hàm filter sẽ được trả kết quả đầu ra là một danh sách. Nhưng từ Python 3, phải dùng list(filter()) thì kết quả trả về mới là list. Điều này cũng áp dụng với map().",
-            "code": "li = [1,2,3,4,5,6,7,8,9,10]\nevenNumbers = list(filter (lambda x: x% 2 == 0, li))\nprint (evenNumbers)"
-        },
-        {
-            "title": "Bài 21:",
-            "description": "Yêu cầu: Viết chương trình Python dùng map() để tạo list chứa các giá trị bình phương của các số trong [1,2,3,4,5,6,7,8,9,10]. Gợi ý: Code mẫu: Kết quả: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]",
-            "code": "li = [1,2,3,4,5,6,7,8,9,10]\nsquaredNumbers = list(map (lambda x: x ** 2, li))\nprint (squaredNumbers)"
-        },
-        {
-            "title": "Bài 22:",
-            "description": "Yêu cầu: Viết chương trình Python dùng map() và filter() để tạo list chứa giá trị bình phương của các số chẵn trong [1,2,3,4,5,6,7,8,9,10]. Gợi ý: Code mẫu: Kết quả: [4, 16, 36, 64, 100]",
-            "code": "li = [1,2,3,4,5,6,7,8,9,10]\nsquareOfEvenNumbers = list (map (lambda x: x ** 2, filter (lambda x: x% 2 == 0, li)))\nprint (squareOfEvenNumbers)"
-        },
-        {
-            "title": "Bài 23:",
-            "description": "Yêu cầu: Viết chương trình Python dùng filter() để tạo danh sách chứa các số chẵn trong đoạn [1,20]. Gợi ý: Code mẫu: Kết quả: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]",
-            "code": "evenNumbers = list(filter (lambda x: x% 2 == 0, range (1,21)))\nprint (evenNumbers)"
-        },
-        {
-            "title": "Bài 24:",
-            "description": "Yêu cầu: Viết chương trình Python sử dụng map() để tạo list chứa giá trị bình phương của các số trong đoạn [1,20]. Gợi ý: Code mẫu: Kết quả: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400]",
-            "code": "squaredNumbers = list(map(lambda x: x ** 2, range (1,21)))\nprint (squaredNumbers)"
-        },
-        {
-            "title": "Bài 25:",
-            "description": "Yêu cầu: Định nghĩa một class có tên là Vietnam, với static method là printNationality. Gợi ý: Sử dụng @staticmethod để định nghĩa class với static method. Code mẫu:",
-            "code": "class Vietnam (object):\n    @staticmethod\n    def printNationality ():\n        print (\"Vietnam\")\n# Bài Python 50, Code by Quantrimang.com\nVietnamVodich = Vietnam ()\nVietnamVodich.printNationality ()\nVietnam.printNationality ()"
-        },
-        {
-            "title": "Bài 26:",
-            "description": "Yêu cầu: Định nghĩa một class tên Vietnam và class con của nó là Hanoi. Gợi ý: Code mẫu:",
-            "code": "class Vietnam(object):\n    pass\n\nclass Hanoi(Vietnam):\n    pass\n# Bài Python 51, Code by Quantrimang.com\nVietnamVodich = Vietnam()\nNguoiHanoi = Hanoi()\nprint (VietnamVodich)\nprint (NguoiHanoi)"
-        },
-        {
-            "title": "Bài 27:",
-            "description": "Yêu cầu: Định nghĩa một class có tên là Circle có thể được xây dựng từ bán kính. Circle có một method có thể tính diện tích. Gợi ý: Sử dụng def methodName(self) để định nghĩa method. Code mẫu: Trong code trên, ta thực hiện khai báo lớp Circle, và method tính diện tích cho hình tròn, với bán kính r=2, kết quả khi chạy code sẽ được là: 12.56.",
-            "code": "class Circle(object):\n    def __init__(self, r):\n       self.radius = r\n# Bài Python 52, Code by Quantrimang.com\n    def area(self):\n       return self.radius**2*3.14\n\naCircle = Circle(2)\nprint (aCircle.area())"
-        },
-        {
-            "title": "Bài 28:",
-            "description": "Yêu cầu: Định nghĩa class có tên là Hinhchunhat được xây dựng bằng chiều dài và chiều rộng. Class Hinhchunhat có method để tính diện tích. Gợi ý: Code mẫu: Trong code trên chiều dài hình nhữ nhật là 10, chiều rộng là 2. Chạy code ta được kết quả là 20.",
-            "code": "class Hinhchunhat(object):\n    def __init__(self, l, w):\n       self.dai = l\n       self.rong = w\n# Bài Python 53, Code by Quantrimang.com\n    def area(self):\n       return self.dai*self.rong\n\naHinhchunhat = Hinhchunhat(10,2)\nprint (aHinhchunhat.area())"
-        },
-        {
-            "title": "Bài 29:",
-            "description": "Yêu cầu: Định nghĩa một class có tên là Shape và class con là Square. Square có hàm init để lấy đối số là chiều dài. Cả 2 class đều có hàm area để in diện tích của hình, diện tích mặc định của Shape là 0. Gợi ý: Để ghi đè một method trong super class, chúng ta có thể định nghĩa một method có cùng tên trong super class. Code mẫu: Với chiều dài là 3, khi chạy code trên ta được kết quả là 9.",
-            "code": "class Shape(object):\n    def __init__(self):\n       pass\n\n    def area(self):\n       return 0\n# Bài Python 54, Code by Quantrimang.com\nclass Square(Shape):\n    def __init__(self, l):\n       Shape.__init__(self)\n       self.length = l\n\n    def area(self):\n       return self.length*self.length\n\naSquare= Square(3)\nprint (aSquare.area())"
-        },
-        {
-            "title": "Bài 30:",
-            "description": "Yêu cầu: Đưa ra một RuntimeError exception. Gợi ý: Code mẫu: Code đơn giản: Code phức tạp:",
-            "code": "# Bài Python 55, Code by Quantrimang.com\nclass RuntimeError(Exception):\n    def __init__(self, mismatch):\n       Exception.__init__(self, mismatch)\ntry:\n    print (\"And now, the Vocational Guidance Counsellor Sketch.\")\n    raise RuntimeError(\"Does not have proper hat\")\n    print (\"This print statement will not be reached.\")\nexcept RuntimeError as problem:\n    print (\"Vocation problem: {0}\".format(problem))"
-        },
-        {
-            "title": "Bài 31:",
-            "description": "Yêu cầu: Viết hàm để tính 5/0 và sử dụng try/exception để bắt lỗi. Gợi ý: Code mẫu: Kết quả khi chạy code trên ta nhận được như sau:",
-            "code": "def throws():\n    return 5/0\n# Bài Python 56, Code by Quantrimang.com\ntry:\n    throws()\nexcept ZeroDivisionError:\n    print (\"Chia một số cho 0!\")\nexcept Exception as problem:\n    print ('Bắt được một exception')\nfinally:\n    print ('Phép tính bị hủy')"
-        },
-        {
-            "title": "Bài 32:",
-            "description": "Yêu cầu: Định nghĩa một class exception tùy chỉnh, nhận một thông báo là thuộc tính. Gợi ý: Code mẫu: Khi chạy code trên, thông báo \"Có gì đó sai sai!\" sẽ được in ra màn hình.",
-            "code": "class MyError(Exception):\n     \"\"\"My own exception class\n# Bài Python 57, Code by Quantrimang.com\n     Attributes:\n        msg -- explanation of the error\n     \"\"\"\n\n     def __init__(self, msg):\n        self.msg = msg\n\nerror = MyError(\"Có gì đó sai sai!\")\nprint (error)"
-        },
-        {
-            "title": "Bài 33:",
-            "description": "Yêu cầu: Giả sử rằng chúng ta có vài địa chỉ email dạng username@companyname.com, hãy viết một chương trình để in username của địa chỉ email cụ thể. Cả username và companyname chỉ bao gồm chữ cái. Ví dụ: Nếu cung cấp địa chỉ email QTM@quantrimang.com thì đầu ra sẽ là: QTM. Trong trường hợp dữ liệu đầu vào không có sẵn, ta giả định nó được người dùng nhập vào từ giao diện điều khiển. Gợi ý: Sử dụng \\w để kiểm tra chữ cái. Code mẫu: Khi chạy code trên, nó sẽ nhận email được nhập vào bởi người dùng và trả về username của email, nếu nhập vào qtm@quantrimang.com bạn sẽ nhận được kết quả là qtm.",
-            "code": "# Bài Python 58, Code by Quantrimang.com\nimport re\nemailAddress = input()\npat2 = \"(\\w+)@((\\w+\\.)+(com))\"\nre2 = re.match(pat2,emailAddress)\nprint (re2.group(1))"
-        },
-        {
-            "title": "Bài 34:",
-            "description": "Yêu cầu: Tương tự như bài 58, nhưng lần này ta sẽ viết hàm để lấy companyname. Gợi ý: Code mẫu: Đây là kết quả khi chạy code bài 58 và 59:",
-            "code": "# Bài Python 59, Code by Quantrimang.com\nimport re\nemailAddress = input()\npat2 = \"(\\w+)@(\\w+)\\.(com)\"\nr2 = re.match(pat2,emailAddress)\nprint (r2.group(2))"
-        },
-        {
-            "title": "Bài 35:",
-            "description": "Yêu cầu: Viết một chương trình chấp nhận chuỗi từ được phân tách bằng khoảng trống và in các từ chỉ gồm chữ số. Ví du: Nếu những từ sau đây là đầu vào của chương trình: 3 quantrimang.com và 2 python. Đầu ra sẽ là ['3', '2'] Gợi ý: Code mẫu: Kết quả khi chạy code trên sẽ như sau:",
-            "code": "# Bài Python 60, Code by Quantrimang.com\nimport re\ns = input()\nprint (re.findall(\"\\d+\",s))"
-        },
-        {
-            "title": "Bài 36:",
-            "description": "Yêu cầu: In chuỗi Unicode \"Hello world\". Gợi ý: Code mẫu:",
-            "code": "# Bài Python 61, Code by Quantrimang.com\nunicodeString = u\"Hello world!\"\nprint (unicodeString)"
-        },
-        {
-            "title": "Bài 37:",
-            "description": "Yêu cầu: Viết chương trình để đọc chuỗi ASCII và chuyển đổi nó sang một chuỗi Unicode được mã hóa bằng UTF-8. Gợi ý: Code mẫu:",
-            "code": "# Bài Python 62, Code by Quantrimang.com\ns = input()\nv = s.encode() # có thể dùng v=s.encode('utf-8')\nprint (v)"
-        },
-        {
-            "title": "Bài 38:",
-            "description": "Yêu cầu: Viết comment đặc biệt để chỉ định file code nguồn Python ở Unicode. Code mẫu:",
-            "code": "# -*- coding: utf-8 -*-\n#Bài Python 63, Code by Quantrimang.com"
-        },
-        {
-            "title": "Bài 39:",
-            "description": "Yêu cầu: Viết một chương trình tính 1/2 + 2/3 + 3/4 + ... + n/(n + 1) với một n là số được nhập vào (n> 0). Ví dụ, nếu n là số sau đây được nhập vào: 5 Thì đầu ra phải là: 3.55 Gợi ý: Code mẫu:",
-            "code": "#Bài Python 64, Code by Quantrimang.com\nn=int(input(\"Nhập số n >0: \"))\nsum=0.0\nfor i in range(1,n+1):\n    sum += float(float(i)/(i+1))\nprint (sum)"
-        },
-        {
-            "title": "Bài 40:",
-            "description": "Yêu cầu: Viết chương trình tính: f(n)=f(n-1)+100 khi n>0 và f(0)=1, với n là số được nhập vào (n>0). Ví dụ: Nếu n được nhập vào là 5 thì đầu ra phải là 500. Gợi ý: Code mẫu:",
-            "code": "def f(n):\n    if n==0:\n        return 0\n    else:\n        return f(n-1)+100\n#Bài Python 65, Code by Quantrimang.com\nn=int(input(\"Nhập số n>0: \"))\nprint (f(n))"
-        },
-        {
-            "title": "Bài 41:",
-            "description": "Yêu cầu: Dãy Fibonacci được tính dựa trên công thức sau: f(n)=0 nếu n=0 f(n)=1 nếu n=1 f(n)=f(n-1)+f(n-2) nếu n>1 Hãy viết chương trình tính giá trị của f(n) với n là số được người dùng nhập vào. Ví dụ: Nếu n được nhập vào là 7 thì đầu ra của chương trình sẽ là 13. Gợi ý: Tương tự như bài 65, ta cũng sử dụng hàm đệ quy trong Python. Code mẫu:",
-            "code": "def f(n):\n    if n == 0: return 0\n    elif n == 1: return 1\n    else: return f(n-1)+f(n-2)\n#Bài Python 66, Code by Quantrimang.com\nn=int(input(\"Nhập số n: \"))\nprint (f(n))"
-        },
-        {
-            "title": "Bài 42:",
-            "description": "Yêu cầu: Dãy Fibonacci được tính dựa trên công thức sau: Hãy viết chương trình sử dụng list comprehension để in dãy Fibonacci dưới dạng tách biệt bằng dấu \",\", n được người dùng nhập vào. Ví dụ: Nếu n được nhập vào là 7 thì đầu ra của chương trình sẽ là: 0,1,1,2,3,5,8,13 Gợi ý: Code mẫu:",
-            "code": "def f(n):\n    if n == 0: return 0\n    elif n == 1: return 1\n    else: return f(n-1)+f(n-2)\n#Bài Python 67, Code by Quantrimang.com\nn=int(input(\"Nhập số n: \"))\nvalues = [str(f(x)) for x in range(0, n+1)]\nprint (\",\".join(values))"
-        },
-        {
-            "title": "Bài 43:",
-            "description": "Yêu cầu: Viết chương trình sử dụng generator để in số chẵn trong khoảng từ 0 đến n, cách nhau bởi dấu phẩy, n là số được nhập vào. Ví dụ nếu n=10 được nhập vào thì đầu ra của chương trình là: 0,2,4,6,8,10 Gợi ý: Code mẫu:",
-            "code": "def EvenGenerator(n):\n    i=0\n    while i<=n:\n        if i%2==0:\n            yield i\n        i+=1\n\n# Bài tập Python 68, Code by Quantrimang.com\nn=int(input(\"Nhập n: \"))\nvalues = []\nfor i in EvenGenerator(n):\n    values.append(str(i))\n\nprint (\"Các số chẵn trong khoảng 0 và n là: \",\",\".join(values))"
-        },
-        {
-            "title": "Bài 44:",
-            "description": "Yêu cầu: Viết chương trình sử dụng generator để in số chia hết cho 5 và 7 giữa 0 và n, cách nhau bằng dấu phẩy, n được người dùng nhập vào. Ví dụ: Nếu n=100 được nhập vào thì đầu ra của chương trình là: 0,35,70. Gợi ý: Như bài 68. Code mẫu:",
-            "code": "def NumGenerator(n):\n    for i in range(n+1):\n        if i%5==0 and i%7==0:\n            yield i\n# Bài tập Python 69, Code by Quantrimang.com\nn=int(input(\"Nhập n: \"))\nvalues = []\nfor i in NumGenerator(n):\n    values.append(str(i))\n\nprint (\"Các số chia hết cho 5 và 7 trong khoảng 0 và n là: \",\",\".join(values))"
-        },
-        {
-            "title": "Bài 45:",
-            "description": "Yêu cầu: Viết các lệnh assert để xác minh rằng tất cả các số trong list [2,4,6,8] là chẵn. Gợi ý: Code mẫu:",
-            "code": "li = [2,4,6,8]\nfor i in li:\n assert i%2==0\n# Code by Quantrimang.com"
-        },
-        {
-            "title": "Bài 46:",
-            "description": "Yêu cầu: Viết chương trình chấp nhận biểu thức toán học cơ bản do người dùng nhập vào từ bảng điều khiển và in kết quả ước lượng ra ngoài màn hình. Ví dụ: Nếu chuỗi sau là đầu vào của chương trình: 35 + 3 thì đầu ra sẽ lả: 38 Gợi ý: Code mẫu: Mấy bài này khá đơn giản và kết quả đầu ra cũng dễ hình dung nên mình không chụp kết quả nữa nhé, code thì test trên Python 3.6.2 đảm bảo chạy ngon rồi.",
-            "code": "expression = input(\"Nhập biểu thức cần tính: \")\n# Code by Quantrimang.com\nprint (eval(expression))"
-        },
-        {
-            "title": "Bài 47:",
-            "description": "Yêu cầu: Viết hàm tìm kiếm nhị phân để tìm các item trong một list đã được sắp xếp. Hàm sẽ trả lại chỉ số của phần tử được tìm thấy trong list. Gợi ý: Code mẫu: Khi chạy code trên ta sẽ có kết quả đầu ra là 4 và -1, 4 là vị trí của 11 trong list li, và -1 nói lên rằng không có số 12 trong list li.",
-            "code": "import math\ndef bin_search(li, element):\n    bottom = 0\n    top = len(li)-1\n    index = -1\n    while top>=bottom and index==-1:\n        mid = int(math.floor((top+bottom)/2.0))\n        if li[mid]==element:\n            index = mid\n        elif li[mid]>element:\n            top = mid-1\n        else:\n            bottom = mid+1\n    return index\n# Code by Quantrimang.com\nli=[2,5,7,9,11,17,222]\nprint (bin_search(li,11))\nprint (bin_search(li,12))"
-        },
-        {
-            "title": "Bài 48:",
-            "description": "Yêu cầu: Tạo một số thập phân ngẫu nhiên, có giá trị nằm trong khoảng từ 10 đến 100 bằng cách sử dụng module math của Python. Gợi ý: Code mẫu: Vì hàm trên được sử dụng để tạo số thập phân ngẫu nhiên, nằm trong khoảng từ 10 đến 100, nên mỗi lần bạn chạy code sẽ cho ra một kết quả khác nhau, là các số thập phân ngẫu nhiên thỏa mãn điều kiện nằm trong khoảng 10 đến 100.",
-            "code": "import random\nprint (random.random()*100)\n# Code by Quantrimang.com"
-        },
-        {
-            "title": "Bài 49:",
-            "description": "Yêu cầu: Tạo một số thập phân ngẫu nhiên, có giá trị nằm trong khoảng 5 đến 95, sử dụng module math của Python. Gợi ý: Code mẫu: Code bài 73, 74 mình thấy chưa chuẩn lắm, mong nhận được góp ý của các bạn ở phần bình luận nhé!",
-            "code": "import random\nprint (random.random()*100-5)\n# Code by Quantrimang.com"
-        },
-        {
-            "title": "Bài 50:",
-            "description": "Yêu cầu: Viết chương trình xuất ra một số chẵn ngẫu nhiên trong khoảng 0 đến 10 (bao gồm cả 0 và 10), sử dụng module random và list comprehension. Gợi ý: Code mẫu:",
-            "code": "import random\nprint (random.choice([i for i in range(11) if i%2==0]))\n# Code by Quantrimang.com"
-        },
-        {
-            "title": "Bài 51:",
-            "description": "Yêu cầu: Vui lòng viết chương trình để xuất một số ngẫu nhiên, chia hết cho 5 và 7, từ 0 đến 200 (gồm cả 0 và 200), sử dụng module random và list comprehension. Gợi ý: Code mẫu: Khi chạy code trên, bạn sẽ nhận được kết quả đầu ra là số bất kỳ, nằm trong đoạn [0;200] chia hết cho cả 5 và 7.",
-            "code": "import random\nprint (random.choice([i for i in range(201) if i%5==0 and i%7==0]))\n#Code by Quantrimang.com"
-        },
-        {
-            "title": "Bài 52:",
-            "description": "Yêu cầu: Vui lòng viết chương trình để tạo một list với 5 số ngẫu nhiên từ 100 đến 200. Gợi ý: Code mẫu: Khi chạy code trên bạn sẽ nhận được 1 list, có 5 giá trị ngẫu nhiên, nằm trong đoạn [100;200]. Nếu đề bài yêu cầu số ngẫu nhiên nằm trong đoạn [0;100] thì range() trong đoạn trên bạn chỉ cần viết là range(100).",
-            "code": "import random\nprint (random.sample(range(100,201), 5))\n#Code by Quantrimang.com"
-        },
-        {
-            "title": "Bài 53:",
-            "description": "Yêu cầu: Viết chương trình tạo ngẫu nhiên list gồm 5 số chẵn nằm trong đoạn [100;200]. Gợi ý: Code mẫu:",
-            "code": "import random\nprint (random.sample([i for i in range(100,201) if i%2==0], 5))\n#Code by Quantrimang.com"
-        },
-        {
-            "title": "Bài 54:",
-            "description": "Yêu cầu: Viết chương trình để tạo ngẫu nhiên một list gồm 5 số, chia hết cho 5 và 7, nằm trong đoạn [1;1000]. Gợi ý: Code mẫu:",
-            "code": "import random\nprint (random.sample([i for i in range(1,1001) if i%5==0 and i%7==0], 5))\n#Code by Quantrimang.com"
-        },
-        {
-            "title": "Bài 55:",
-            "description": "Yêu cầu: Viết chương trình để in một số nguyên ngẫu nhiên từ 7 đến 15. Gợi ý: Code mẫu:",
-            "code": "import random\nprint (random.randrange(7,16))\n#Code by Quantrimang.com"
-        },
-        {
-            "title": "Bài 56:",
-            "description": "Yêu cầu: Viết chương trình để nén và giải nén string \"\"hello world!hello world!hello world!hello world!\". Gợi ý: Code mẫu: Với Python 2, code mẫu sẽ như sau: Tuy nhiên, trong Python 3, bạn phải gọi encode() và chỉ định kiểu mã hóa, giả sử là utf-8 thì yêu cầu trên sẽ được code như sau:",
-            "code": "import zlib\ns = \"hello world!hello world!hello world!hello world!\"\nt = zlib.compress(s.encode(\"utf-8\"))\nprint (t)\nprint (zlib.decompress(t))\n#Code by Quantrimang.com"
-        },
-        {
-            "title": "Bài 57:",
-            "description": "Yêu cầu: Bạn hãy viết một chương trình để in thời gian thực thi (running time of execution) phép tính \"1+1\" 100 lần. Gợi ý: Code mẫu: Khi chạy code trên, bạn cần phải đợi để phép tính trên được thực hiện xong rồi chương trình mới in ra thời gian thực thi. Ban đầu khi mới chạy code, cảm giác như không có gì đang được thực thi.",
-            "code": "from timeit import Timer\nt = Timer(\"for i in range(100):1+1\")\nprint (t.timeit())"
-        },
-        {
-            "title": "Bài 58:",
-            "description": "Yêu cầu: Viết chương trình để trộn và in list [3,6,7,8]. Gợi ý: Code mẫu: Khi code được thực thi, mỗi lần chạy sẽ cho ra một list với thứ tự các số được trộn ngẫu nhiên.",
-            "code": "from random import shuffle\nli = [3,6,7,8]\n\n#Code by Quantrimang.com\nshuffle(li)\nprint (li)"
-        },
-        {
-            "title": "Bài 59:",
-            "description": "Yêu cầu: Viết một chương trình để tạo tất cả các câu có chủ ngữ nằm trong [\"Anh\",\"Em\"], động từ nằm trong [\"Chơi\",\"Yêu\"] và tân ngữ là [\"Bóng đá\",\"Xếp hình\"]. Gợi ý: Code mẫu: Khi chạy code trên ta sẽ có kết quả như sau:",
-            "code": "Anh Chơi Bóng đá.\nAnh Chơi Xếp hình.\nAnh Yêu Bóng đá.\nAnh Yêu Xếp hình.\nEm Chơi Bóng đá.\nEm Chơi Xếp hình.\nEm Yêu Bóng đá.\nEm Yêu Xếp hình."
-        },
-        {
-            "title": "Bài 60:",
-            "description": "Yêu cầu: Viết chương trình in list sau khi xóa các số chẵn trong [5,6,77,45,22,12,24]. Gợi ý: Code mẫu: Kết quả khi chạy code trên sẽ là:",
-            "code": "[5, 77, 45]"
-        },
-        {
-            "title": "Bài 61:",
-            "description": "Yêu cầu: Sử dụng list comprehension để viết chương trình in list sau khi đã loại bỏ các số chia hết cho 5 và 7 trong [12,24,35,70,88,120,155]. Gợi ý: Code mẫu: Ta sẽ có kết quả như sau:",
-            "code": "[12, 24, 88, 120, 155]"
-        },
-        {
-            "title": "Bài 62:",
-            "description": "Yêu cầu: Viết chương trình in list sau khi đã xóa số thứ 0, thứ 2, thứ 4, thứ 6 trong [12,24,35,70,88,120,155]. Gợi ý: Code mẫu: Code trên sẽ trả về kết quả:",
-            "code": "[24, 70, 120]"
-        },
-        {
-            "title": "Bài 63:",
-            "description": "Yêu cầu: Viết chương trình tạo mảng 3D 3*5*8 có mỗi phần tử là 0. Gợi ý: Code mẫu: Kết quả:",
-            "code": "[[[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]], [[0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0]], [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]]]"
-        },
-        {
-            "title": "Bài 64:",
-            "description": "Yêu cầu: Viết chương trình in list sau khi đã xóa số ở vị trí thứ 0, thứ 5, thứ 5 trong [12,24,35,70,88,120,155]. Gợi ý: Code mẫu: Kết quả:",
-            "code": "[24, 35, 70, 155]"
-        },
-        {
-            "title": "Bài 65:",
-            "description": "Yêu cầu: Viết chương trình in list sau khi đã xóa giá trị 24 trong [12,24,35,24,88,120,155]. Gợi ý: Code mẫu: Kết quả:",
-            "code": "[12, 35, 88, 120, 155]"
-        },
-        {
-            "title": "Bài 66:",
-            "description": "Yêu cầu: Với 2 list cho trước: [1,3,6,78,35,55] và [12,24,35,24,88,120,155], viết chương trình để tạo list có phần tử là giao của 2 list đã cho. Gợi ý: Sử dụng set() và \"&=\" để thiết lập điểm giao. Code mẫu: Kết quả:",
-            "code": "[120, 35, 12]"
-        },
-        {
-            "title": "Bài 67:",
-            "description": "Yêu cầu: Viết chương trình in list từ list [12,24,35,24,88,120,155,88,120,155], sau khi đã xóa hết các giá trị trùng nhau. Gợi ý: Code mẫu: Kết quả:",
-            "code": "List sau khi xóa giá trị trùng là: [12, 15, 24, 35, 88, 120, 155]"
-        },
-        {
-            "title": "Bài 68:",
-            "description": "Yêu cầu: Định nghĩa class Nguoi và 2 class con của nó: Nam, Nu. Tất cả các class có method \"getGender\" có thể in \"Nam\" cho class Nam và \"Nữ\" cho class Nu. Gợi ý: Code mẫu: Kết quả:",
-            "code": "Nam\nNữ"
-        },
-        {
-            "title": "Bài 69:",
-            "description": "Yêu cầu: Viết chương trình đếm và in số ký tự của chuỗi do người dùng nhập vào. Ví dụ: Nếu chuỗi nhập vào là quantrimang.com thì đầu ra sẽ là: q,1u,1a,2n,2t,1r,1i,1m,2g,1.,1c,1o,1 Gợi ý: Code mẫu: Kết quả:",
-            "code": "Nhập chuỗi cần đếm ký tự: quantrimang.com\nq,1\nu,1\na,2\nn,2\nt,1\nr,1\ni,1\nm,2\ng,1\n.,1\nc,1\no,1"
-        },
-        {
-            "title": "Bài 70:",
-            "description": "Yêu cầu: Viết chương trình nhận chuỗi đầu vào từ giao diện điều khiển và in nó theo thứ tự ngược lại. Ví dụ nếu chuỗi nhập vào là: i love you Thì kết quả đầu ra là: uoy evol i Gợi ý: Code mẫu:",
-            "code": "chuoi=input(\"Nhập chuỗi vào đây: \")\n# Code by Quantrimang.com\nchuoi = chuoi[::-1]\nprint (chuoi)"
-        },
-        {
-            "title": "Bài 71:",
-            "description": "Yêu cầu: Viết chương trình nhận chuỗi do người dùng nhập vào và in các ký tự có chỉ số chẵn. Ví dụ: Nếu chuỗi sau được nhập vào: q1u2a3n4t5r6i7m8a9n4g5.6c7o8m, thì đầu ra sẽ là: quantrimang.com. Gợi ý: Code mẫu: Kết quả:",
-            "code": "Nhập chuỗi vào đây: q1u2a3n4t5r6i7m8a9n4g5.6c7o8m\nquantrimang.com"
-        },
-        {
-            "title": "Bài 72:",
-            "description": "Yêu cầu: Viết chương trình in tất cả các hoán vị của [1,2,3]. Gợi ý: Code mẫu: Kết quả:",
-            "code": "[(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)]"
-        },
-        {
-            "title": "Bài 73:",
-            "description": "Yêu cầu: Viết chương trình để giải 1 câu đố cổ của Trung Quốc: Một trang trại thỏ và gà có 35 đầu, 94 chân, hỏi số thỏ và gà là bao nhiêu? Gợi ý: Code mẫu: Kết quả:",
-            "code": "(23, 12)"
-        },
-        {
-            "title": "Bài 74:",
-            "description": "Yêu cầu: Viết chương trình Python tính tổng tất cả số nguyên dương và âm trong một chuỗi được cung cấp. Chuỗi gốc: -100#^sdfkj8902w3ir021@swf-20 Tính tổng tất cả số nguyên âm và dương nằm trong chuỗi sau: Cách 1: Code Python: Kết quả mẫu: Sơ đồ  Cách 2: Code Python: Kết quả mẫu: Sơ đồ:  Tạm thế đã nhé, mình đang tìm thêm nguồn bài, xem có các bài tập Python nâng cao hoặc những yêu cầu chương trình phức tạp hơn không. Bạn bookmark lại để check bài mới thường xuyên nhé, nếu có nguồn bài tập Python hay thì nhớ chia sẻ bằng cách bình luận bên dưới bài viết nhé! Các bài tập trên được tham khảo, trích dẫn lại từ: Xem thêm:",
-            "code": "Original string:\n-100#^sdfkj8902w3ir021@swf-20\n\nSum of all positive, negative integers present in the said string:\nPositive values: 9046\nNegative values: -120"
-        },
-        {
-            "title": "Viết một chương trình yêu cầu người dùng nhập chiều rộng và cao của hình chữ nhật, sau đó xuất kết quả diện tích và chu vi của hình chữ nhật đó.",
-            "description": "Code mẫu 1: Code mẫu 2:",
-            "code": "//By Fate-X\n#include<iostream>\n\nusing std::cout;\nusing std::cin;\n\nint main(){\n    double width, height, area, perimeter;\n    \n    cout << \"This program takes the height and width (when given) of a rectangle and returns\\nits area and perimeter.\\n\\n\";\n    cout << \"Input Width: \";\n         \n    cin >> width;\n    cin.ignore();\n    \n    cout << \"Input height: \";\n    \n    cin >> height;\n    cin.ignore();\n    \n    area = height * width;\n    perimeter = 2 * (width + height);\n    \n    cout << \"\\n\\nArea: \" << area << \"\\n\";\n    cout << \"Perimeter: \" << perimeter << \"\\n\\n\";\n    \n    cout << \"Please press the 'return' key to exit the program.\";\n    cin.get();\n    \n    return 0;\n}"
-        },
-        {
-            "title": "Viết một chương trình trong C++ để tìm kích thước của các kiểu dữ liệu cơ bản sau:",
-            "description": "sizeof(char) : 1 bytesizeof(short) : 2 bytesizeof(int) : 4 bytesizeof(long) : 8 bytesizeof(long long): 8 bytesizeof(float): 4 bytesizeof(double): 8 bytesizeof(long double) : 16 bytesizeof(bool) : 1 byte Code mẫu:",
-            "code": "#include <iostream>\nusing namespace std;\n \nint main() \n{\n    cout << \"\\n\\n Find Size of fundamental data types :\\n\";\n\tcout << \"------------------------------------------\\n\";\n   cout << \" The sizeof(char) is :          \" << sizeof(char) << \" bytes \\n\" ;\n   cout << \" The sizeof(short) is :         \" << sizeof(short) << \" bytes \\n\" ;\n   cout << \" The sizeof(int) is :           \" << sizeof(int) << \" bytes \\n\" ;\n   cout << \" The sizeof(long) is :          \" << sizeof(long) << \" bytes \\n\" ;\n   cout << \" The sizeof(long long) is :     \" << sizeof(long long) << \" bytes \\n\";\n   cout << \" The sizeof(float) is :         \" << sizeof(float) << \" bytes \\n\" ;\n   cout << \" The sizeof(double) is :        \" << sizeof(double) << \" bytes \\n\";\n   cout << \" The sizeof(long double) is :   \" << sizeof(long double) << \" bytes \\n\";\n   cout << \" The sizeof(bool) is :          \" << sizeof(bool) << \" bytes \\n\\n\";\n   return 0;\n}"
-        },
-        {
-            "title": "Viết một chương trình C++ để in nội dung chào mừng trong một dòng riêng.",
-            "description": "Code mẫu:",
-            "code": "#include <iostream>\nusing namespace std;\n \nint main()\n{\n    cout << \"\\n\\n Print a welcome text in a separate line :\\n\";\n\tcout << \"----------------------------------------------\\n\";\n    cout << \" Welcome to \\n\" ;\n    cout << \" w3resource.com \"<<endl ;\n    \n}"
-        },
-        {
-            "title": "Viết chương trình C++ để in các dòng text đã cho trước",
-            "description": "Bài tập: Viết chương trình C++ để in các dòng sau: Toi nam nay 18 tuoi. Toi co nhieu hoai bao muon theo duoi. Code mẫu:",
-            "code": "#include <cstdlib>\n#include <iostream> \nusing namespace std; \nint main(int argc, char *argv[]) \n{ \n int age; \n age=10; \n cout<<\" Toi nam nay \"<<age<<\" tuoi.\\n\"; \n cout<<\" Toi co nhieu hoai bao muon theo duoi.\\n\"; \n \n return 0; \n}"
-        },
-        {
-            "title": "Viết chương trình C++ để in các dấu sao theo yêu cầu đã cho.",
-            "description": "Yêu cầu: Viết chương trình C++ để in các dấu sao theo dạng sau: * ** *** **** ***** ****** Code mẫu:",
-            "code": "#include <cstdlib> \n#include <iostream> \nusing namespace std; \n  \nint main(int argc, char *argv[]) \n{ \n    cout<<\"*\\n\"; \n    cout<<\"**\\n\"; \n    cout<<\"***\\n\"; \n    cout<<\"****\\n\"; \n    cout<<\"*****\\n\";\n    cout<<\"******\\n\"; \n    return 0; \n}"
-        },
-        {
-            "title": "Viết chương trình C++ để khai báo 2 biến nguyên và một biến thực, sau đó in kết quả trên màn hình.",
-            "description": "Yêu cầu: Viết chương trình C++ để khai báo hai biến nguyên, một biến thực và gán các giá trị tương ứng 8, 16 và 15.8 cho chúng. Sau đó in kết quả trên màn hình. Code mẫu:",
-            "code": "#include <cstdlib> \n#include <iostream> \n  \nusing namespace std; \n  \nint main(int argc, char *argv[]) \n{ \n    int a; \n    int b; \n    float c; \n    a=8; \n    b=16; \n    c=15.8; \n    cout<<\"a=\"<<a<<\"\\t\"<<\"b=\"<<b<<\"\\t\"<<\"c=\"<<c; \n    cout<<\"\\n\"; \n        \n    return 0; \n}"
-        },
-        {
-            "title": "Viết chương trình C++ yêu cầu người dùng nhập tên của họ, rồi in kết quả trên màn hình.",
-            "description": "Yêu cầu: Viết chương trình C++ để nhắc người dùng nhập tên của họ, sau đó in kết quả trên màn hình. Code mẫu:",
-            "code": "#include <cstdlib> \n#include <iostream> \n  \nusing namespace std;   \nint main(int argc, char *argv[]) \n{ \n    char name[20]; \n    cout<<\"Hay nhap ten cua ban:\"; \n    cin>>name; \n    cout<<\"Xin chao \"<<name<<\"! \\n\"; \n        \n    return 0; \n}"
-        },
-        {
-            "title": "Viết chương trình C++ để nhập ba số nguyên đã biết, sau đó in ra màn hình theo thứ tự tăng dần và giảm dần.",
-            "description": "Yêu cầu: Viết chương trình C++ yêu cầu người dùng nhập ba số nguyên, sau đó in 3 số đó ra màn hình theo thứ tự tăng dần. Code mẫu:",
-            "code": "#include <iostream>\n\nvoid Sort(int &a, int &b, int &c){\n    if(a>b){\n       int tmp = a;\n       a = b;\n       b = tmp;\n    }\n    if(a>c){\n       int tmp = a;\n       a=c;\n       c = tmp;\n    }\n    if(b>c){\n       int tmp = b;\n       b=c;\n       c=tmp;\n    }\n    return;\n}\n\nint main(){\n    std::cout << \"Nhap 3 so nguyen: \" << std::endl;\n    int num1;\n    int num2;\n    int num3;\n    std::cin >> num1 >> num2 >> num3;\n\n    int output1 = num1;\n    int output2 = num2;\n    int output3 = num3;\n\n    Sort(output1,output2,output3);\n\n    std::cout << num1 << \" \" << num2 << \" \" << num3 << \" \"\n         << \" khi sap xep tang dan: \";\n    std::cout << output1 << \" \" << output2 << \" \" << output3 << std::endl;\n\n    return 0;\n}"
-        },
-        {
-            "title": "Viết chương trình C++ để in một số nguyên, một số thực, một ký tự đã được định nghĩa trước.",
-            "description": "Yêu cầu: In các giá trị sau trên màn hình chuẩn: Một số nguyên a, một số thực b và một ký tự c. Code mẫu:",
-            "code": "#include <iostream>\n#include <conio.h>\nusing namespace std; \nint main()\n{\n  \n  int a = 100;\n  float b = 5.1;\n  char c = 'q';\n  cout << \"a = \" << a << endl;\n  cout << \"b = \" << b << endl;\n  cout << \"c = \" << c << endl;\n  return 0;\n}"
-        },
-        {
-            "title": "Viết một chương trình trong C++ để in tổng của hai số.",
-            "description": "Code mẫu:",
-            "code": "#include <iostream>\nusing namespace std;\n \nint main()\n{\n    cout << \"\\n\\n In tổng của hai số :\\n\";\n\tcout << \"-----------------------------------\\n\";\n    cout << \" Tổng của 29 và 30 là : \"<< 29+30 <<\"\\n\\n\" ;\n}"
-        },
-        {
-            "title": "Tìm tổng, hiệu, tích và thương của hai số nguyên và in kết quả ra màn hình.",
-            "description": "Yêu cầu: Giả sử có 2 số nguyên cho trước, bạn hãy tính tổng, hiệu, tích và thương của hai số rồi in kết quả ra màn hình. Code mẫu:",
-            "code": "#include <iostream>\n#include <conio.h>\nusing namespace std; \nint main()\n{\n  \n  int x = 12;\n  int y = 5;\n  int tong, hieu, tich, thuong;\n  tong = x + y;\n  hieu = x - y;\n  tich = x * y;\n  thuong = x / y;\n  cout << \"Tong cua \" << x << \" va \" << y << \" la \" << tong << \".\" << endl;\n  cout << \"Hieu cua \" << x << \" va \" << y << \" la \" << hieu << \".\" << endl;\n  cout << \"Tich cua \" << x << \" va \" << y << \" la \" << tich << \".\" << endl;\n  cout << \"Thuong cua \" << x << \" va \" << y << \" la \" << thuong << \".\" << endl;\n  return 0;\n}"
-        },
-        {
-            "title": "Nhập hai số nguyên từ bàn phím, tính tổng, trung bình cộng của chúng và in ra màn hình.",
-            "description": "Yêu cầu: Nhập 2 số nguyên từ bàn phím, tính tổng, trung bình cộng của hai số đó, rồi in kết quả ra màn hình. Code mẫu: Kết quả:",
-            "code": "Nhap hai so nguyen:35Tong cua 3 va 5 la 8.Trung binh cong cua 3 va 5 la 4."
-        },
-        {
-            "title": "Tìm vận tốc cuối cùng và in kết quả ra màn hình khi biết vận tốc ban đầu, gia tốc và thời gian.",
-            "description": "Yêu cầu: Giả sử một chiếc ô tô có vận tốc ban đầu v0, gia tốc a và thời gian t. Viết chương trình C++ để tìm vận tốc cuối cùng của ô tô và in kết quả ra màn hình. Gợi ý: Code mẫu: Kết quả:",
-            "code": "Nhap van toc v0, gia toc a, thoi gian t:10 2 15Van toc cuoi cung la 40."
-        },
-        {
-            "title": "Viết chương trình C++ để tính các giá trị biểu thức và in kết quả theo yêu cầu.",
-            "description": "Yêu cầu: Viết chương trình C++ để in kết quả dưới dạng sau: Gợi ý: Code mẫu: Kết quả:",
-            "code": "#include <cstdlib>\n#include <iostream>\n \nusing namespace std;\n \nint main(int argc, char *argv[])\n{\nint x;\nint y;\nx=18;\ny=2;\ncout<<\"Ket qua tra ve:\\n\";\ncout<<\"Gtri x\\t\"<<\"Gtri y\\t\"<<\"Bieu thuc\\t\"<<\"Ket qua\\n\";\ncout<<x<<\" |\\t\"<<y<<\" |\\t\"<<\"A=y+3\\t\"<<\"\\t|\"<<\"A=\"<<y+3<<\"\\n\";\ncout<<x<<\" |\\t\"<<y<<\" |\\t\"<<\"B=y-2\\t\"<<\"\\t|\"<<\"B=\"<<y-2<<\"\\n\";\ncout<<x<<\" |\\t\"<<y<<\" |\\t\"<<\"C=y*5\\t\"<<\"\\t|\"<<\"C=\"<<y*5<<\"\\n\";\ncout<<x<<\" |\\t\"<<y<<\" |\\t\"<<\"D=x/y\\t\"<<\"\\t|\"<<\"D=\"<<(float)(x/y)<<\"\\n\";\ncout<<x<<\" |\\t\"<<y<<\" |\\t\"<<\"E=x%y\\t\"<<\"\\t|\"<<\"E=\"<<x%y<<\"\\n\";\n\nreturn 0;\n}"
-        },
-        {
-            "title": "Viết chương trình C++ để tính điểm thi.",
-            "description": "Yêu cầu: Viết chương trình để nhập điểm kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ, sau đó tính tổng điểm và in kết quả ra màn hình dưới dạng sau: Code mẫu: Kết quả:",
-            "code": "#include <cstdlib> \n#include <iostream> \n#include<iomanip> \nusing namespace std; \nint main(int argc, char *argv[]) \n{ \n    float q1; \n    float q2; \n    float q3; \n    float tongdiemkt; \n    float diemgk; \n    float diemck; \n    float tongdiem; \n    cout<<\"==========Diem kiem tra================\\n\"; \n    cout<<\"Nhap diem kiem tra 1:\"; \n    cin>>q1; \n    cout<<\"\\n\"; \n    cout<<\"Nhap diem kiem tra 2:\"; \n    cin>>q2; \n    cout<<\"\\n\"; \n    cout<<\"Nhap diem kiem tra 3:\"; \n    cin>>q3; \n    cout<<\"\\n\"; \n    cout<<\"==========Diem thi giua ky=============\\n\"; \n    cout<<\"Nhap diem thi giua ky:\"; \n    cin>>diemgk; \n    cout<<\"\\n\"; \n    cout<<\"===========Diem thi cuoi ky=============\\n\"; \n    cout<<\"Nhap diem thi cuoi ky:\"; \n    cin>>diemck; \n    cout<<\"\\n\"; \n    tongdiemkt=q1+q2+q3; \n    tongdiem=tongdiemkt+diemgk+diemck; \n    cout<<\"Tong diem kiem tra:\"<<right<<setw(5)<<tongdiemkt; \n    cout<<\"\\n\"; \n    cout<<\"Diem thi giua ky:\"<<right<<setw(7)<<diemgk; \n    cout<<\"\\n\"; \n    cout<<\"Diem thi cuoi ky:\"<<right<<setw(10)<<diemck; \n    cout<<\"\\n\"; \n    cout<<\".................................\\n\"; \n    cout<<\"Tong diem:\"<<right<<setw(11)<<tongdiem; \n    cout<<\"\\n\"; \n    return 0; \n}"
-        },
-        {
-            "title": "Nhập 2 số x, y và tính theo yêu cầu",
-            "description": "Yêu cầu: Viết chương trình C++ để nhập hai số nguyên x, y, sau đó tính: p=x*y, s=x+y, q=s2+p(s-x)*(p+y) và in kết quả ra màn hình. Code mẫu: Kết quả:",
-            "code": "Nhap gia tri x: 5 Nhap gia tri y: 10 Gia tri bieu thuc q la: 30225"
-        },
-        {
-            "title": "Bài tập C++ vận dụng nạp chồng toán tử nhị phân để cộng, trừ hai số phức",
-            "description": "Yêu cầu: Sử dụng khái niệm nạp chồng toán tử để cộng và trừ hai số phức. Gợi ý: Để sử dụng nạp chồng toán tử trong giải bài tập cộng, trừ số phức này, bạn cần làm những việc sau: Khai báo lớp sophuc: Bao gồm các biến và hàm thành viên Dùng hàm getvalue() để nhận phần thực, phần ảo của số phức Định nghĩa hàm operator+() để cộng hai số phức Định nghĩa hàm operator-() để trừ hai số phức Định nghĩa hàm display Khai báo các số phức i1, i2 và kết quả phép tính kq1, kq2 Gọi hàm getvalue để lấy phần thực và phần ảo cho i1, i2 Gọi hàm operator+() và operator-() để cộng, trừ hai số phức Gọi hàm display để hiển thị 2 số phức, 2 kết quả cộng, trừ Trả về các giá trị Code mẫu: Kết quả:",
-            "code": "#include<iostream>\n#include<conio.h>\nusing namespace std;  \nclass sophuc\n{\n              int a,b;\n    public:\n              void getvalue()\n              {\n                 cout<<\"Hãy nhập phần thực, phần ảo:\";\n                 cin>>a>>b;\n              }\n              sophuc operator+(sophuc i)\n              {\n                            sophuc q;\n                            q.a=a+i.a;\n                            q.b=b+i.b;\n                            return(q);\n              }\n              sophuc operator-(sophuc i)\n              {\n                            sophuc q;\n                            q.a=a-i.a;\n                            q.b=b-i.b;\n                            return(q);\n              }\n              void display()\n              {\n                            cout<<a<<\"+\"<<b<<\"i\"<<\"\\n\";\n              }\n};\n\nint main()\n{\n   \n   sophuc i1,i2,kq1,kq2;\n \n   i1.getvalue();\n   i2.getvalue();\n \n   kq1 = i1+i2;\n   kq2 = i1-i2;\n \n   cout<<\"Số phức đã nhập vào:\\n\";\n   i1.display();\n   i2.display();\n  \n   cout<<\"Kết quả cộng, trừ số phức:\\n\";\n   kq1.display();\n   kq2.display();\n  \n   return 0;\n}"
-        }, 
-    
+    {
+        "title": "Bài 1:",
+        "description": "Câu hỏi: Viết chương trình tìm tất cả các số chia hết cho 7 nhưng không phải bội số của 5, nằm trong đoạn 2000 và 3200 (tính cả 2000 và 3200). Các số thu được sẽ được in thành chuỗi trên một dòng, cách nhau bằng dấu phẩy. Gợi ý: Để giải quyết bài toán này, bạn có thể sử dụng vòng lặp for để duyệt qua tất cả các số trong đoạn từ 2000 đến 3200. Sau đó, bạn sử dụng câu lệnh if để kiểm tra xem mỗi số có chia hết cho 7 không và không phải là bội số của 5 không. Nếu đúng, thì in số đó ra màn hình. Code mẫu:",
+        "code": "j=[] #Tạo một danh sách rỗng để lưu kết quả\nfor i in range(2000, 3201): #Duyệt qua tất cả các số trong đoạn từ 2000 đến 3200\n    if (i%7==0) and (i%5!=0): #Kiểm tra xem số i có chia hết cho 7 và không phải là bội số của 5 không\n        j.append(str(i)) #Nếu đúng, thì thêm số i vào danh sách result\nprint (','.join(j)) #In ra màn hình danh sách result, các phần tử cách nhau bằng dấu phẩy"
+    },
+    {
+        "title": "Bài 2:",
+        "description": "Câu hỏi: Viết một chương trình có thể tính giai thừa của một số cho trước. Kết quả được in thành chuỗi trên một dòng, phân tách bởi dấu phẩy. Ví dụ, số cho trước là 8 thì kết quả đầu ra phải là 40320. Gợi ý: Trong trường hợp dữ liệu đầu vào được cung cấp, bạn hãy chọn cách để người dùng nhập số vào. Code mẫu:",
+        "code": "x=int(input(\"Nhập số cần tính giai thừa:\"))\ndef fact(x):\n    if x == 0:\n        return 1\n    return x * fact(x - 1)\nprint (fact(x))"
+    },
+    {
+        "title": "Bài 3:",
+        "description": "Câu hỏi: Với số nguyên n nhất định, hãy viết chương trình để tạo ra một dictionary chứa (i, i*i) như là số nguyên từ 1 đến n (bao gồm cả 1 và n) sau đó in ra dictionary này. Ví dụ: Giả sử số n là 8 thì đầu ra sẽ là: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}. Gợi ý: Code mẫu:",
+        "code": "n=int(input(\"Nhập vào một số:\"))\nd=dict()\nfor i in range(1,n+1):\n    d[i]=i*i\n    #Code by Quantrimang.com\n\nprint (d)"
+    },
+    {
+        "title": "Bài 4:",
+        "description": "Câu hỏi: Viết chương trình chấp nhận một chuỗi số, phân tách bằng dấu phẩy từ giao diện điều khiển, tạo ra một danh sách và một tuple chứa mọi số. Ví dụ: Đầu vào được cung cấp là 34,67,55,33,12,98 thì đầu ra là: ['34', '67', '55', '33', '12', '98']('34', '67', '55', '33', '12', '98') Gợi ý: Code mẫu:",
+        "code": "values=input(\"Nhập vào các giá trị:\")\nl=values.split(\",\")\nt=tuple(l)\nprint (l)\nprint (t)"
+    },
+    {
+        "title": "Bài 5:",
+        "description": "Câu hỏi: Định nghĩa một class có ít nhất 2 method: Thêm vào các hàm kiểm tra đơn giản để kiểm tra method của class. Ví dụ: Chuỗi nhập vào là quantrimang.com thì đầu ra phải là: QUANTRIMANG.COM Gợi ý: Code mẫu:",
+        "code": "class InputOutString(object):\n   def __init__(self):\n       self.s = \"\"\n\n   def getString(self):\n       self.s = input(\"Nhập chuỗi:\")\n# Code by Quantrimang.com\n   def printString(self):\n       print (self.s.upper())\n\nstrObj = InputOutString()\nstrObj.getString()\nstrObj.printString()"
+    },
+    {
+        "title": "Bài 6:",
+        "description": "Câu hỏi: Viết một method tính giá trị bình phương của một số. Gợi ý: Code mẫu: Vì đề bài không yêu cầu cụ thể bạn phải tính bình phương số có sẵn hay số nhập vào nên mình dùng cả hai.",
+        "code": "x=int(input(\"Nhập một số:\")) #nhập số cần tính bình phương từ giao diện\ndef square(num):  #định nghĩa bình phương của một số\n  return num ** 2\n# Code by Quantrimang.com\nprint (square(2)) #in bình phương của 2\nprint (square(3)) #in bình phương của 3\nprint (square(x)) #in bình phương của x"
+    },
+    {
+        "title": "Bài 7:",
+        "description": "Câu hỏi: Python có nhiều hàm được tích hợp sẵn, nếu không biết cách sử dụng nó, bạn có thể đọc tài liệu trực tuyến hoặc tìm vài cuốn sách. Nhưng Python cũng có sẵn tài liệu về hàm cho mọi hàm tích hợp trong Python. Yêu cầu của bài tập này là viết một chương trình để in tài liệu về một số hàm Python được tích hợp sẵn như abs(), int(), input() và thêm tài liệu cho hàm bạn tự định nghĩa. Gợi ý: Code mẫu:",
+        "code": "print (abs.__doc__)\nprint (int.__doc__)\nprint (input.__doc__)\n# Code by Quantrimang.com\ndef square(num):\n '''Trả lại giá trị bình phương của số được nhập vào.\n\n Số nhập vào phải là số nguyên.\n '''\n return num ** 2\n\nprint (square.__doc__)"
+    },
+    {
+        "title": "Bài 8:",
+        "description": "Câu hỏi: Định nghĩa một lớp gồm có tham số lớp và có cùng tham số instance Gợi ý: Code mẫu:",
+        "code": "class Person:\n # Định nghĩa lớp \"name\"\n name = \"Person\"\n # Code by Quantrimang.com\n def __init__(self, name = None):\n # self.name là biến instance\n self.name = name\n\njeffrey = Person(\"Jeffrey\")\nprint (\"%s name is %s\" % (Person.name, jeffrey.name))\n\nnico = Person()\nnico.name = \"Nico\"\nprint (\"%s name is %s\" % (Person.name, nico.name))"
+    },
+    {
+        "title": "Bài 9:",
+        "description": "Câu hỏi: Tính tuổi dựa trên ngày tháng năm sinh nhập vào. Ví dụ: Nhập vào ngày tháng năm sinh dạng y/m/d, hãy tính tuổi của người này. Gợi ý: Sử dụng module datetime. Sử dụng datetime, chúng ta có thể tìm tuổi bằng cách trừ năm sinh cho năm hiện tại. Code mẫu: Bài 10: Viết chương trình nhập: số giờ làm mỗi tuần, thù lao trên mỗi giờ làm tiêu chuẩn, từ đó tính ra số tiền thực lĩnh của nhân viên. Biết rằng: số giờ tiêu chuẩn mỗi tuần là 44 giờ, và mỗi giờ vượt chuẩn được trả gấp rưỡi so với giờ làm chuẩn. Code mẫu:",
+        "code": "so_gio_lam = float(input(\"Nhập số giờ làm mỗi tuần: \"))\nluong_gio = float(input(\"Nhập thù lao trên mỗi giờ làm tiêu chuẩn: \"))\n\ngio_tieu_chuan = 44  # Số giờ làm chuẩn mỗi tuần\ngio_vuot_chuan = max(0, so_gio_lam - gio_tieu_chuan)  # Số giờ làm vượt chuẩn mỗi tuần\nthuc_linh = gio_tieu_chuan * luong_gio + gio_vuot_chuan * luong_gio * 1.5  # Tính tổng thu nhập\nprint(f\"Số tiền thực lĩnh của nhân viên: {thuc_linh}\")"
+    },
+    {
+        "title": "Bài 1:",
+        "description": "Câu hỏi: Viết chương trình và in giá trị theo công thức cho trước: Q = √([(2 * C * D)/H]) (bằng chữ: Q bằng căn bậc hai của [(2 nhân C nhân D) chia H]. Với giá trị cố định của C là 50, H là 30. D là dãy giá trị tùy biến, được nhập vào từ giao diện người dùng, các giá trị của D được phân cách bằng dấu phẩy. Ví dụ: Giả sử chuỗi giá trị của D nhập vào là 100,150,180 thì đầu ra sẽ là 18,22,24. Gợi ý: Code mẫu:",
+        "code": "#!/usr/bin/env python\nimport math\nc=50\nh=30\nvalue = []\nitems=[x for x in input(\"Nhập giá trị của d: \").split(',')]\nfor d in items:\n    value.append(str(int(round(math.sqrt(2*c*float(d)/h)))))\n# Code by Quantrimang.com\nprint (','.join(value))"
+    },
+    {
+        "title": "Bài 2:",
+        "description": "Câu hỏi: Viết một chương trình có 2 chữ số, X, Y nhận giá trị từ đầu vào và tạo ra một mảng 2 chiều. Giá trị phần tử trong hàng thứ i và cột thứ j của mảng phải là i*j. Lưu ý: i=0,1,...,X-1; j=0,1,...,Y-1. Ví dụ: Giá trị X, Y nhập vào là 3,5 thì đầu ra là: [[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]] Gợi ý: Code mẫu:",
+        "code": "input_str = input(\"Nhập X, Y: \")\ndimensions=[int(x) for x in input_str.split(',')]\nrowNum=dimensions[0]\ncolNum=dimensions[1]\nmultilist = [[0 for col in range(colNum)] for row in range(rowNum)]\n# Viết bởi Quantrimang.com\nfor row in range(rowNum):\n    for col in range(colNum):\n        multilist[row][col]= row*col\n\nprint (multilist)"
+    },
+    {
+        "title": "Bài 3:",
+        "description": "Câu hỏi: Viết một chương trình chấp nhận chuỗi từ do người dùng nhập vào, phân tách nhau bởi dấu phẩy và in những từ đó thành chuỗi theo thứ tự bảng chữ cái, phân tách nhau bằng dấu phẩy. Giả sử đầu vào được nhập là: without,hello,bag,world, thì đầu ra sẽ là: bag,hello,without,world. Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
+        "code": "items=[x for x in input(\"Nhập một chuỗi: \").split(',')]\nitems.sort()\nprint (','.join(items))"
+    },
+    {
+        "title": "Bài 4:",
+        "description": "Câu hỏi: Viết một chương trình chấp nhận chuỗi là các dòng được nhập vào, chuyển các dòng này thành chữ in hoa và in ra màn hình. Giả sử đầu vào là: Hello worldPractice makes perfect Thì đầu ra sẽ là: HELLO WORLDPRACTICE MAKES PERFECT Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
+        "code": "lines = []\nwhile True:\n   s = input()\n   if s:\n      lines.append(s.upper())\n   else:\n      break;\n# Bài Python 12, Code by Quantrimang.com\nfor sentence in lines:\n    print (sentence)"
+    },
+    {
+        "title": "Bài 5:",
+        "description": "Câu hỏi: Viết một chương trình chấp nhận đầu vào là một chuỗi các từ tách biệt bởi khoảng trắng, loại bỏ các từ trùng lặp, sắp xếp theo thứ tự bảng chữ cái, rồi in chúng. Giả sử đầu vào là: hello world and practice makes perfect and hello world again Thì đầu ra là: again and hello makes perfect practice world Gợi ý: Code mẫu:",
+        "code": "s = input(\"Nhập chuỗi của bạn: \")\nwords = [word for word in s.split(\" \")]\nprint (\" \".join(sorted(list(set(words)))))"
+    },
+    {
+        "title": "Bài 6:",
+        "description": "Câu hỏi: Viết một chương trình chấp nhận đầu vào là chuỗi các số nhị phân 4 chữ số, phân tách bởi dấu phẩy, kiểm tra xem chúng có chia hết cho 5 không. Sau đó in các số chia hết cho 5 thành dãy phân tách bởi dấu phẩy. Ví dụ đầu vào là: 0100,0011,1010,1001 Đầu ra sẽ là: 1010 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
+        "code": "value = []\nitems=[x for x in input(\"Nhập các số nhị phân: \").split(',')]\nfor p in items:\n    intp = int(p, 2)\n    if not intp%5:\n    value.append(p)\n# Bài tập Python 14, viết bởi Quantrimang.com\nprint (','.join(value))"
+    },
+    {
+        "title": "Bài 7:",
+        "description": "Câu hỏi: Viết một chương trình tìm tất cả các số trong đoạn 1000 và 3000 (tính cả 2 số này) sao cho tất cả các chữ số trong số đó là số chẵn. In các số tìm được thành chuỗi cách nhau bởi dấu phẩy, trên một dòng. Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
+        "code": "values = []\nfor i in range(1000, 3001):\n    s = str(i)\n    if (int(s[0])%2==0) and (int(s[1])%2==0) and (int(s[2])%2==0) and (int(s[3])%2==0):\n values.append(s)\n# Bài tập Python 15, Code by Quantrimang.com\nprint (\",\".join(values))"
+    },
+    {
+        "title": "Bài 8:",
+        "description": "Câu hỏi: Viết một chương trình chấp nhận đầu vào là một câu, đếm số chữ cái và chữ số trong câu đó. Giả sử đầu vào sau được cấp cho chương trình: hello world! 123 Thì đầu ra sẽ là: Số chữ cái là: 10Số chữ số là: 3 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
+        "code": "s = input(\"Nhập câu của bạn: \")\n# Bài tập Python 16, Code by Quantrimang.com\nd={\"DIGITS\":0, \"LETTERS\":0}\nfor c in s:\n    if c.isdigit():\n        d[\"DIGITS\"]+=1\n    elif c.isalpha():\n        d[\"LETTERS\"]+=1\n    else:\n        pass\nprint (\"Số chữ cái là:\", d[\"LETTERS\"])\nprint (\"Số chữ số là:\", d[\"DIGITS\"])"
+    },
+    {
+        "title": "Bài 9:",
+        "description": "Câu hỏi: Viết một chương trình chấp nhận đầu vào là một câu, đếm chữ hoa, chữ thường. Giả sử đầu vào là: Quản Trị Mạng Thì đầu ra là: Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
+        "code": "s = input(\"Nhập câu của bạn: \")\nd={\"UPPER CASE\":0, \"LOWER CASE\":0}\n# Code by Quantrimang.com\nfor c in s:\n    if c.isupper():\n        d[\"UPPER CASE\"]+=1\n    elif c.islower():\n        d[\"LOWER CASE\"]+=1\n    else:\n        pass\nprint (\"Chữ hoa:\", d[\"UPPER CASE\"])\nprint (\"Chữ thường:\", d[\"LOWER CASE\"])"
+    },
+    {
+        "title": "Bài 10:",
+        "description": "Câu hỏi: Viết một chương trình tính giá trị của a+aa+aaa+aaaa với a là số được nhập vào bởi người dùng. Giả sử a được nhập vào là 1 thì đầu ra sẽ là: 1234 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
+        "code": "a = input(\"Nhập số a: \")\nn1 = int( \"%s\" % a )\nn2 = int( \"%s%s\" % (a,a) )\nn3 = int( \"%s%s%s\" % (a,a,a) )\nn4 = int( \"%s%s%s%s\" % (a,a,a,a) )\n# Bài tập Python 18, Code by Quantrimang.com\nprint (\"Tổng cần tính là: \",n1+n2+n3+n4)"
+    },
+    {
+        "title": "Bài 11:",
+        "description": "Câu hỏi: Sử dụng một danh sách để lọc các số lẻ từ danh sách được người dùng nhập vào. Giả sử đầu vào là: 1,2,3,4,5,6,7,8,9 thì đầu ra phải là: 1,3,5,7,9 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
+        "code": "values = input(\"Nhập dãy số của bạn, cách nhau bởi dấu phẩy: \")\nnumbers = [x for x in values.split(\",\") if int(x)%2!=0]\nprint (\",\".join(numbers))"
+    },
+    {
+        "title": "Bài 12:",
+        "description": "Câu hỏi: Viết chương trình tính số tiền thực của một tài khoản ngân hàng dựa trên nhật ký giao dịch được nhập vào từ giao diện điều khiển. Định dạng nhật ký được hiển thị như sau: Giả sử đầu vào được cung cấp là: Thì đầu ra sẽ là: 500 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
+        "code": "import sys\nnetAmount = 0\n# Bài tập Python 20, Code by Quantrimang.com\nwhile True:\n    s = input(\"Nhập nhật ký giao dịch: \")\n    if not s:\n        break\n    values = s.split(\" \")\n    operation = values[0]\n    amount = int(values[1])\n    if operation==\"D\":\n        netAmount+=amount\n    elif operation==\"W\":\n        netAmount-=amount\n    else:\n        pass\nprint (netAmount)"
+    },
+    {
+        "title": "Bài 13:",
+        "description": "Viết chương trình Python nhập một dãy số nguyên, sau đó kiểm tra xem nó có khả đối xứng không? Nếu có, hãy biến đổi nó để được một dãy đối xứng. Gợi ý: Code mẫu:",
+        "code": "def kiem_tra_doi_xung(lst):\n    return lst == lst[::-1]\n\ndef sx_doi_xung(lst):\n    if kiem_tra_doi_xung(lst):\n        return lst\n    else:\n        for i in range(len(lst)//2):\n            if lst[i] != lst[-i-1]:\n                for j in range(i+1, len(lst)):\n                    if lst[j] == lst[-i-1]:\n                        lst[i], lst[j] = lst[j], lst[i]\n                        break\n        return lst\n\nlst = list(map(int, input(\"Nhập dãy số nguyên, cách nhau bởi dấu cách: \").split()))\n\nif kiem_tra_doi_xung(lst):\n    print(\"Dãy số đã đối xứng.\")\nelse:\n    new_lst = sx_doi_xung(lst)\n    if kiem_tra_doi_xung(new_lst):\n        print(\"Dãy số đã khả đối xứng và biến đổi thành dãy số đối xứng: \", new_lst)\n    else:\n        print(\"Dãy số không khả đối xứng.\")"
+    },
+    {
+        "title": "Bài 14:",
+        "description": "Viết chương trình Python nhập một mảng hai chiều các số thực A (m hàng, n cột) từ bàn phím. a. Tìm giá trị lớn nhất và nhỏ nhất trên mỗi cột b. Tìm phần tử lớn nhất và phần tử nhỏ nhất của mảng A cùng các chỉ số hàng và cột của 2 phần tử này. c. Trong mảng A có bao nhiêu phần tử bằng phần tử lớn nhất. Gợi ý: Code mẫu dùng hàm numpy: Code mẫu dùng các hàm thông thường:",
+        "code": "# Hàm nhập mảng A từ bàn phím\ndef input_array(m, n):\n    A = []\n    for i in range(m):\n        row = list(map(float, input(f\"Nhập hàng {i+1}, cách nhau bởi dấu cách: \").split()))\n        A.append(row)\n    return A\n\n# Hàm tìm giá trị lớn nhất và nhỏ nhất trên mỗi cột của mảng A\ndef find_max_min_per_col(A):\n    m, n = len(A), len(A[0])\n    max_per_col = [max([A[i][j] for i in range(m)]) for j in range(n)]\n    min_per_col = [min([A[i][j] for i in range(m)]) for j in range(n)]\n    return max_per_col, min_per_col\n\n# Hàm tìm phần tử lớn nhất và nhỏ nhất của mảng A cùng các chỉ số hàng và cột\ndef find_max_min_index(A):\n    max_val, min_val = A[0][0], A[0][0]\n    max_row, max_col, min_row, min_col = 0, 0, 0, 0\n    m, n = len(A), len(A[0])\n    for i in range(m):\n        for j in range(n):\n            if A[i][j] > max_val:\n                max_val = A[i][j]\n                max_row, max_col = i, j\n            if A[i][j] < min_val:\n                min_val = A[i][j]\n                min_row, min_col = i, j\n    return max_val, max_row, max_col, min_val, min_row, min_col\n\n# Hàm đếm số phần tử trong mảng A bằng phần tử lớn nhất\ndef count_max_value(A):\n    max_val = max([max(row) for row in A])\n    count = 0\n    for row in A:\n        count += row.count(max_val)\n    return count\n\n# Nhập mảng A từ bàn phím\nm, n = map(int, input(\"Nhập số hàng và số cột của mảng A, cách nhau bởi dấu cách: \").split())\nA = input_array(m, n)\n\n# Tìm giá trị lớn nhất và nhỏ nhất trên mỗi cột của mảng A\nmax_per_col, min_per_col = find_max_min_per_col(A)\nprint(\"Giá trị lớn nhất trên mỗi cột: \", max_per_col)\nprint(\"Giá trị nhỏ nhất trên mỗi cột: \", min_per_col)\n\n# Tìm phần tử lớn nhất và nhỏ nhất của mảng A cùng các chỉ số hàng và cột\nmax_val, max_row, max_col, min_val, min_row, min_col = find_max_min_index(A)\nprint(f\"Phần tử lớn nhất: {max_val}, hàng: {max_row+1}, cột: {max_col+1}\")\nprint(f\"Phần tử nhỏ nhất: {min_val}, hàng: {min_row+1}, cột: {min_col+1}\")\n\n# Đếm số phần tử trong mảng\ncount = count_max_value(A)\nprint(f\"Số phần tử bằng giá trị lớn nhất ({max_val}) trong mảng A: {count}\")"
+    },
+    {
+        "title": "Bài 1:",
+        "description": "Câu hỏi: Một website yêu cầu người dùng nhập tên người dùng và mật khẩu để đăng ký. Viết chương trình để kiểm tra tính hợp lệ của mật khẩu mà người dùng nhập vào. Các tiêu chí kiểm tra mật khẩu bao gồm: 1. Ít nhất 1 chữ cái nằm trong [a-z]2. Ít nhất 1 số nằm trong [0-9]3. Ít nhất 1 kí tự nằm trong [A-Z]4. Ít nhất 1 ký tự nằm trong [$ # @]5. Độ dài mật khẩu tối thiểu: 66. Độ dài mật khẩu tối đa: 12 Chương trình phải chấp nhận một chuỗi mật khẩu phân tách nhau bởi dấu phẩy và kiểm tra xem chúng có đáp ứng những tiêu chí trên hay không. Mật khẩu hợp lệ sẽ được in, mỗi mật khẩu cách nhau bởi dấu phẩy. Ví dụ mật khẩu nhập vào chương trình là: ABd1234@1,a F1#,2w3E*,2We3345 Thì đầu ra sẽ là: ABd1234@1 Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
+        "code": "import re\nvalue = []\nitems=[x for x in input(\"Nhập mật khẩu: \").split(',')]\n# Bài tập Python 21, Code by Quantrimang.com\nfor p in items:\n    if len(p)<6 or len(p)>12:\n        continue\n    else:\n        pass\n    if not re.search(\"[a-z]\",p):\n        continue\n    elif not re.search(\"[0-9]\",p):\n        continue\n    elif not re.search(\"[A-Z]\",p):\n        continue\n    elif not re.search(\"[$#@]\",p):\n        continue\n    elif re.search(\"\\s\",p):\n        continue\n    else:\n        pass\n    value.append(p)\nprint (\",\".join(value))"
+    },
+    {
+        "title": "Bài 2:",
+        "description": "Câu hỏi: Viết chương trình sắp xếp tuple (name, age, score) theo thứ tự tăng dần, name là string, age và height là number. Tuple được nhập vào bởi người dùng. Tiêu chí sắp xếp là: Sắp xếp theo name sau đó sắp xếp theo age, sau đó sắp xếp theo score. Ưu tiên là tên > tuổi > điểm. Nếu đầu vào là: Tom,19,80John,20,90Jony,17,91Jony,17,93Json,21,85 Thì đầu ra sẽ là: [('John', '20', '90'), ('Jony', '17', '91'), ('Jony', '17', '93'), ('Json', '21', '85'), ('Tom', '19', '80')] Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Sử dụng itemgetter để chấp nhận nhiều key sắp xếp. Code mẫu:",
+        "code": "from operator import itemgetter, attrgetter\n# Bài tập Python 22 Code by Quantrimang.com\nl = []\nwhile True:\n    s = input()\n    if not s:\n       break\n    l.append(tuple(s.split(\",\")))\n\nprint (sorted(l, key=itemgetter(0,1,2)))"
+    },
+    {
+        "title": "Bài 3:",
+        "description": "Câu hỏi: Xác định một class với generator có thể lặp lại các số nằm trong khoảng 0 và n, và chia hết cho 7. Gợi ý: Sử dụng yield. Code mẫu:",
+        "code": "def putNumbers(n):\n    i = 0\n    while i<n:\n        j=i\n        i=i+1\n        if j%7==0:\n            yield j\n# Bài tập Python 23 Code by Quantrimang.com\nfor i in putNumbers (100):\n     print (i)"
+    },
+    {
+        "title": "Bài 4:",
+        "description": "Câu hỏi: Một Robot di chuyển trong mặt phẳng bắt đầu từ điểm đầu tiên (0,0). Robot có thể di chuyển theo hướng UP, DOWN, LEFT và RIGHT với những bước nhất định. Dấu di chuyển của robot được đánh hiển thị như sau: UP 5 DOWN 3 LEFT 3 RIGHT 3 Các con số sau phía sau hướng di chuyển chính là số bước đi. Hãy viết chương trình để tính toán khoảng cách từ vị trí hiện tại đến vị trí đầu tiên, sau khi robot đã di chuyển một quãng đường. Nếu khoảng cách là một số thập phân chỉ cần in só nguyên gần nhất. Ví dụ: Nếu tuple sau đây là input của chương trình: UP 5DOWN 3LEFT 3RIGHT 2 thì đầu ra sẽ là 2. Gợi ý: Trong trường hợp dữ liệu đầu vào được nhập vào chương trình nó nên được giả định là dữ liệu được người dùng nhập vào từ giao diện điều khiển. Code mẫu:",
+        "code": "import math\npos = [0,0]\nwhile True:\n    s = input()\n    if not s:\n        break\n    movement = s.split(\" \")\n    direction = movement[0]\n    steps = int(movement[1])\n    if direction==\"UP\":\n        pos[0]+=steps\n    elif direction==\"DOWN\":\n        pos[0]-=steps\n    elif direction==\"LEFT\":\n        pos[1]-=steps\n    elif direction==\"RIGHT\":\n        pos[1]+=steps\n    else:\n        pass\n# Bài tập Python 24 Code by Quantrimang.com\nprint (int(round(math.sqrt(pos[1]**2+pos[0]**2))))"
+    },
+    {
+        "title": "Bài 5:",
+        "description": "Câu hỏi: Viết chương trình tính tần suất các từ từ input. Output được xuất ra sau khi đã sắp xếp theo bảng chữ cái. Giả sử input là: New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3. Thì output phải là: 2:23.:13?:1New:1Python:5Read:1and:1between:1choosing:1or:2to:1 Gợi ý: Trong trường hợp dữ liệu đầu vào được cung cấp cho câu hỏi, nó phải được giả định là một input được nhập từ giao diện điều khiển. Code mẫu:",
+        "code": "freq = {} # frequency of words in text\nline = input()\nfor word in line.split():\n    freq[word] = freq.get(word,0)+1\n    # Bài tập Python 25 Code by Quantrimang.com\nwords = sorted(freq.keys())\nfor w in words:\n    print (\"%s:%d\" % (w,freq[w]))"
+    },
+    {
+        "title": "Bài 1:",
+        "description": "Câu hỏi: Định nghĩa 1 hàm có thể tính tổng hai số. Gợi ý: Định nghĩa 1 hàm với 2 số là đối số. Bạn có thể tính tổng trong hàm và trả về giá trị. Code mẫu:",
+        "code": "def SumFunction(number1, number2): #định nghĩa hàm tính tổng\n    return number1+number2\nprint (SumFunction(5,7)) #in tổng 2 số 5 và 7"
+    },
+    {
+        "title": "Bài 2:",
+        "description": "Câu hỏi: Định nghĩa một hàm có thể chuyển số nguyên thành chuỗi và in nó ra giao diện điều khiển Gợi ý: Sử dụng str() để chuyển đổi một số thành chuỗi. Code mẫu:",
+        "code": "def printValue(n):\n    print (str(n))\nprintValue(3)"
+    },
+    {
+        "title": "Bài 3:",
+        "description": "Câu hỏi: Định nghĩa hàm có thể nhận hai số nguyên trong dạng chuỗi và tính tổng của chúng, sau đó in tổng ra giao diện điều khiển. Gợi ý: Sử dụng int() để chuyển đổi một chuỗi thành số nguyên. Code mẫu:",
+        "code": "def printValue(s1,s2):\n    print (int(s1)+int(s2))\nprintValue(\"3\",\"4\") #Kết quả là 7"
+    },
+    {
+        "title": "Bài 4:",
+        "description": "Câu hỏi: Định nghĩa hàm có thể nhận 2 chuỗi từ input và nối chúng sau đó in ra giao diện điều khiển Gợi ý: Sử dụng + để nối các chuỗi. Code mẫu:",
+        "code": "def printValue(s1,s2):\n    print (s1+s2)\nprintValue(\"3\",\"4\") #Kết quả là 34"
+    },
+    {
+        "title": "Bài 5:",
+        "description": "Câu hỏi: Định nghĩa một hàm có input là 2 chuỗi và in chuỗi có độ dài lớn hơn trong giao diện điều khiển. Nếu 2 chuỗi có chiều dài như nhau thì in tất cả các chuỗi theo dòng. Gợi ý: Sử dụng hàm len() để lấy chiều dài của một chuỗi Code mẫu:",
+        "code": "def printValue(s1,s2): \n# Bài tập Python 30 Code by Quantrimang.com\n    len1 = len(s1) \n    len2 = len(s2)\n    if len1>len2:\n        print (s1)\n    elif len2>len1:\n        print (s2)\n    else:\n        print(s1)\n        print (s2) \nprintValue(\"one\",\"three\")"
+    },
+    {
+        "title": "Bài 6:",
+        "description": "Câu hỏi: Định nghĩa hàm có thể chấp nhận input là số nguyên và in \"Đây là một số chẵn\" nếu nó chẵn và in \"Đây là một số lẻ\" nếu là số lẻ. Gợi ý: Sử dụng toán tử % để kiểm tra xem số đó chẵn hay lẻ. Code mẫu:",
+        "code": "def checkValue(n): \n    if n%2 == 0: \nprint (\"Đây là một số chẵn\") \n    else: \n       print (\"Đây là một số lẻ\") \ncheckValue(7)"
+    },
+    {
+        "title": "Bài 7:",
+        "description": "Câu hỏi: Định nghĩa một hàm có thể in dictionary chứa key là các số từ 1 đến 3 (bao gồm cả hai số) và các giá trị bình phương của chúng. Gợi ý: Code mẫu: Chạy code trên bạn sẽ được kết quả là một dictionary như sau: {1: 1, 2: 4, 3: 9}. Nếu chưa hiểu lắm về kiểu dữ liệu dictionary này bạn hãy đọc lại bài: Kiểu dữ liệu trong Python: chuỗi, số, list, tuple, set và dictionary",
+        "code": "def printDict():\n    d=dict() \n    d[1]=1 \n    d[2]=2**2 \n    d[3]=3**2 \n    print (d) \n# Bài tập Python 32, Code by Quantrimang.com\nprintDict()"
+    },
+    {
+        "title": "Bài 8:",
+        "description": "Câu hỏi: Định nghĩa một hàm có thể in dictionary chứa các key là số từ 1 đến 20 (bao gồm cả 1 và 20) và các giá trị bình phương của chúng. Gợi ý: Code mẫu: Kết quả khi chạy code trên là: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144, 13: 169, 14: 196, 15: 225, 16: 256, 17: 289, 18: 324, 19: 361, 20: 400}",
+        "code": "def printDict():\n    d=dict() \n    for i in range(1,21): \n       d[i]=i**2 \n    print (d) \n# Bài tập Python 33, Code by Quantrimang.com\nprintDict()"
+    },
+    {
+        "title": "Bài 9:",
+        "description": "Câu hỏi: Định nghĩa một hàm có thể tạo dictionary, chứa các key là số từ 1 đến 20 (bao gồm cả 1 và 20) và các giá trị bình phương của chúng. Hàm chỉ in các giá trị mà thôi. Gợi ý: Code mẫu: Kết quả bạn nhận được khi chạy code trên là các giá trị bình phương của số từ 1 đến 20.",
+        "code": "def printDict():\n    d=dict() \n    for i in range(1,21): \n d[i]=i**2 \n    for (k,v) in d.items(): \n       print (v) \n# Bài tập Python 34, Code by Quantrimang.com\nprintDict()"
+    },
+    {
+        "title": "Bài 10:",
+        "description": "Câu hỏi: Định nghĩa một hàm có thể tạo ra một dictionary chứa key là những số từ 1 đến 20 (bao gồm cả 1 và 20) và các giá trị bình phương của key. Hàm chỉ cần in các key. Gợi ý: Tương tự như bài 34. Code mẫu: Chạy code trên bạn sẽ nhận được các key trong dictionary, chính là các số từ 1 đến 20.",
+        "code": "def printDict():\n d=dict() \n for i in range(1,21): \n d[i]=i**2 \n for k in d.keys(): \n       print (k) \n# Bài Python 35, Code by Quantrimang.com\nprintDict()"
+    },
+    {
+        "title": "Bài 11:",
+        "description": "Câu hỏi: Định nghĩa một hàm có thể tạo và in list chứa các giá trị bình phương của các số từ 1 đến 20 (tính cả 1 và 20). Gợi ý: Code mẫu: Chạy code trên bạn sẽ nhận được một list chứa các giá trị bình phương của các số từ 1 đến 20. Thụt đầu dòng trong Python rất quan trọng, nếu code trên bạn chỉ cần sửa 1 chút như sau: Thì sẽ nhận được output hình tháp khá đẹp như này:",
+        "code": "def printList():\n    li=list()\n    for i in range(1,21):\n        li.append(i**2)\n        print (li)\n# Bài Python 36, Code by Quantrimang.com\nprintList()"
+    },
+    {
+        "title": "Bài 12:",
+        "description": "Câu hỏi: Định nghĩa một hàm có thể tạo list chứa các giá trị bình phương của các số từ 1 đến 20 (bao gồm cả 1 và 20) và in 5 mục đầu tiên trong list. Gợi ý: Code mẫu: Chạy code trên bạn sẽ nhận được một list chứa giá trị bình phương của các số từ 1 đến 5.",
+        "code": "def printList():\n    li=list() \n    for i in range(1,21): \n li.append(i**2) \n    print (li[:5]) \n# Bài Python 37, Code by Quantrimang.com\nprintList()"
+    },
+    {
+        "title": "Bài 13:",
+        "description": "Câu hỏi: Định nghĩa một hàm có thể tạo ra list chứa các giá trị bình phương của các số từ 1 đến 20 (bao gồm cả 1 và 20), rồi in 5 mục cuối cùng trong list. Gợi ý: Tương tự bài 37. Code mẫu: Khi chạy code trên bạn sẽ nhận được list chứa giá trị bình phương của 16, 17, 18, 19, 20.",
+        "code": "def printList():\n    li=list()\n    for i in range(1,21):\n        li.append(i**2)\n    print (li[-5:]) \n# Bài Python 38, Code by Quantrimang.com\nprintList()"
+    },
+    {
+        "title": "Bài 14:",
+        "description": "Câu hỏi: Định nghĩa một hàm có thể tạo list chứa giá trị bình phương của các số từ 1 đến 20 (bao gồm cả 1 và 20). Sau đó in tất cả các giá trị của list, trừ 5 mục đầu tiên. Gợi ý: Tương tư bài 37, 38. Code mẫu: Kết quả:",
+        "code": "[36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400]"
+    },
+    {
+        "title": "Bài 15:",
+        "description": "Câu hỏi: Định nghĩa 1 hàm có thể tạo và in một tuple chứa các giá trị bình phương của các số từ 1 đến 20 (tính cả 1 và 20). Gợi ý: Code mẫu: Kết quả:",
+        "code": "(1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400)"
+    },
+    {
+        "title": "Bài 16:",
+        "description": "Câu hỏi: Với tuple (1,2,3,4,5,6,7,8,9,10) cho trước, viết một chương trình in một nửa số giá trị đầu tiên trong 1 dòng và 1 nửa số giá trị cuối trong 1 dòng. Gợi ý: Sử dụng [n1:n2] để lấy một phần từ tuple. Code mẫu: Kết quả:",
+        "code": "(1, 2, 3, 4, 5)\n(6, 7, 8, 9, 10)"
+    },
+    {
+        "title": "Bài 17:",
+        "description": "Câu hỏi: Viết một chương trình để tạo tuple khác, chứa các giá trị là số chẵn trong tuple (1,2,3,4,5,6,7,8,9,10) cho trước. Gợi ý: Code mẫu: Kết quả:",
+        "code": "(2, 4, 6, 8, 10)"
+    },
+    {
+        "title": "Bài 18:",
+        "description": "Câu hỏi: Viết một chương trình để tạo ra và in tuple chứa các số chẵn được lấy từ tuple (1,2,3,4,5,6,7,8,9,10). Gợi ý: Code mẫu: Kết quả: (2, 4, 6, 8, 10)",
+        "code": "tp=(1,2,3,4,5,6,7,8,9,10)\nli=list()\nfor i in tp:\n    if tp[i-1]%2==0:\n        li.append(tp[i-1])\n        tp2=tuple(li)\nprint (tp2)"
+    },
+    {
+        "title": "Bài 19:",
+        "description": "Yêu cầu: Viết một chương trình Python nhận chuỗi nhập vào bởi người dùng, in \"Yes\" nếu chuỗi là \"yes\" hoặc \"YES\" hoặc \"Yes\", nếu không in \"No\". Gợi ý: Code mẫu:",
+        "code": "s = input (\"Nhập chuỗi: \")\nif s == \"yes\" or s == \"YES\" or s == \"Yes\":\n   print (\"Yes\")\nelse:\n    print (\"No\")"
+    },
+    {
+        "title": "Bài 20:",
+        "description": "Yêu cầu: Viết chương trình Python có thể lọc các số chẵn trong danh sách sử dụng hàm filter. Danh sách là [1,2,3,4,5,6,7,8,9,10]. Gợi ý: Code mẫu: Kết quả: [2, 4, 6, 8, 10] Lưu ý: Trong các phiên bản Python trước, bạn chỉ cần dùng hàm filter sẽ được trả kết quả đầu ra là một danh sách. Nhưng từ Python 3, phải dùng list(filter()) thì kết quả trả về mới là list. Điều này cũng áp dụng với map().",
+        "code": "li = [1,2,3,4,5,6,7,8,9,10]\nevenNumbers = list(filter (lambda x: x% 2 == 0, li))\nprint (evenNumbers)"
+    },
+    {
+        "title": "Bài 21:",
+        "description": "Yêu cầu: Viết chương trình Python dùng map() để tạo list chứa các giá trị bình phương của các số trong [1,2,3,4,5,6,7,8,9,10]. Gợi ý: Code mẫu: Kết quả: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]",
+        "code": "li = [1,2,3,4,5,6,7,8,9,10]\nsquaredNumbers = list(map (lambda x: x ** 2, li))\nprint (squaredNumbers)"
+    },
+    {
+        "title": "Bài 22:",
+        "description": "Yêu cầu: Viết chương trình Python dùng map() và filter() để tạo list chứa giá trị bình phương của các số chẵn trong [1,2,3,4,5,6,7,8,9,10]. Gợi ý: Code mẫu: Kết quả: [4, 16, 36, 64, 100]",
+        "code": "li = [1,2,3,4,5,6,7,8,9,10]\nsquareOfEvenNumbers = list (map (lambda x: x ** 2, filter (lambda x: x% 2 == 0, li)))\nprint (squareOfEvenNumbers)"
+    },
+    {
+        "title": "Bài 23:",
+        "description": "Yêu cầu: Viết chương trình Python dùng filter() để tạo danh sách chứa các số chẵn trong đoạn [1,20]. Gợi ý: Code mẫu: Kết quả: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]",
+        "code": "evenNumbers = list(filter (lambda x: x% 2 == 0, range (1,21)))\nprint (evenNumbers)"
+    },
+    {
+        "title": "Bài 24:",
+        "description": "Yêu cầu: Viết chương trình Python sử dụng map() để tạo list chứa giá trị bình phương của các số trong đoạn [1,20]. Gợi ý: Code mẫu: Kết quả: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400]",
+        "code": "squaredNumbers = list(map(lambda x: x ** 2, range (1,21)))\nprint (squaredNumbers)"
+    },
+    {
+        "title": "Bài 25:",
+        "description": "Yêu cầu: Định nghĩa một class có tên là Vietnam, với static method là printNationality. Gợi ý: Sử dụng @staticmethod để định nghĩa class với static method. Code mẫu:",
+        "code": "class Vietnam (object):\n    @staticmethod\n    def printNationality ():\n        print (\"Vietnam\")\n# Bài Python 50, Code by Quantrimang.com\nVietnamVodich = Vietnam ()\nVietnamVodich.printNationality ()\nVietnam.printNationality ()"
+    },
+    {
+        "title": "Bài 26:",
+        "description": "Yêu cầu: Định nghĩa một class tên Vietnam và class con của nó là Hanoi. Gợi ý: Code mẫu:",
+        "code": "class Vietnam(object):\n    pass\n\nclass Hanoi(Vietnam):\n    pass\n# Bài Python 51, Code by Quantrimang.com\nVietnamVodich = Vietnam()\nNguoiHanoi = Hanoi()\nprint (VietnamVodich)\nprint (NguoiHanoi)"
+    },
+    {
+        "title": "Bài 27:",
+        "description": "Yêu cầu: Định nghĩa một class có tên là Circle có thể được xây dựng từ bán kính. Circle có một method có thể tính diện tích. Gợi ý: Sử dụng def methodName(self) để định nghĩa method. Code mẫu: Trong code trên, ta thực hiện khai báo lớp Circle, và method tính diện tích cho hình tròn, với bán kính r=2, kết quả khi chạy code sẽ được là: 12.56.",
+        "code": "class Circle(object):\n    def __init__(self, r):\n       self.radius = r\n# Bài Python 52, Code by Quantrimang.com\n    def area(self):\n       return self.radius**2*3.14\n\naCircle = Circle(2)\nprint (aCircle.area())"
+    },
+    {
+        "title": "Bài 28:",
+        "description": "Yêu cầu: Định nghĩa class có tên là Hinhchunhat được xây dựng bằng chiều dài và chiều rộng. Class Hinhchunhat có method để tính diện tích. Gợi ý: Code mẫu: Trong code trên chiều dài hình nhữ nhật là 10, chiều rộng là 2. Chạy code ta được kết quả là 20.",
+        "code": "class Hinhchunhat(object):\n    def __init__(self, l, w):\n       self.dai = l\n       self.rong = w\n# Bài Python 53, Code by Quantrimang.com\n    def area(self):\n       return self.dai*self.rong\n\naHinhchunhat = Hinhchunhat(10,2)\nprint (aHinhchunhat.area())"
+    },
+    {
+        "title": "Bài 29:",
+        "description": "Yêu cầu: Định nghĩa một class có tên là Shape và class con là Square. Square có hàm init để lấy đối số là chiều dài. Cả 2 class đều có hàm area để in diện tích của hình, diện tích mặc định của Shape là 0. Gợi ý: Để ghi đè một method trong super class, chúng ta có thể định nghĩa một method có cùng tên trong super class. Code mẫu: Với chiều dài là 3, khi chạy code trên ta được kết quả là 9.",
+        "code": "class Shape(object):\n    def __init__(self):\n       pass\n\n    def area(self):\n       return 0\n# Bài Python 54, Code by Quantrimang.com\nclass Square(Shape):\n    def __init__(self, l):\n       Shape.__init__(self)\n       self.length = l\n\n    def area(self):\n       return self.length*self.length\n\naSquare= Square(3)\nprint (aSquare.area())"
+    },
+    {
+        "title": "Bài 30:",
+        "description": "Yêu cầu: Đưa ra một RuntimeError exception. Gợi ý: Code mẫu: Code đơn giản: Code phức tạp:",
+        "code": "# Bài Python 55, Code by Quantrimang.com\nclass RuntimeError(Exception):\n    def __init__(self, mismatch):\n       Exception.__init__(self, mismatch)\ntry:\n    print (\"And now, the Vocational Guidance Counsellor Sketch.\")\n    raise RuntimeError(\"Does not have proper hat\")\n    print (\"This print statement will not be reached.\")\nexcept RuntimeError as problem:\n    print (\"Vocation problem: {0}\".format(problem))"
+    },
+    {
+        "title": "Bài 31:",
+        "description": "Yêu cầu: Viết hàm để tính 5/0 và sử dụng try/exception để bắt lỗi. Gợi ý: Code mẫu: Kết quả khi chạy code trên ta nhận được như sau:",
+        "code": "def throws():\n    return 5/0\n# Bài Python 56, Code by Quantrimang.com\ntry:\n    throws()\nexcept ZeroDivisionError:\n    print (\"Chia một số cho 0!\")\nexcept Exception as problem:\n    print ('Bắt được một exception')\nfinally:\n    print ('Phép tính bị hủy')"
+    },
+    {
+        "title": "Bài 32:",
+        "description": "Yêu cầu: Định nghĩa một class exception tùy chỉnh, nhận một thông báo là thuộc tính. Gợi ý: Code mẫu: Khi chạy code trên, thông báo \"Có gì đó sai sai!\" sẽ được in ra màn hình.",
+        "code": "class MyError(Exception):\n     \"\"\"My own exception class\n# Bài Python 57, Code by Quantrimang.com\n     Attributes:\n        msg -- explanation of the error\n     \"\"\"\n\n     def __init__(self, msg):\n        self.msg = msg\n\nerror = MyError(\"Có gì đó sai sai!\")\nprint (error)"
+    },
+    {
+        "title": "Bài 33:",
+        "description": "Yêu cầu: Giả sử rằng chúng ta có vài địa chỉ email dạng username@companyname.com, hãy viết một chương trình để in username của địa chỉ email cụ thể. Cả username và companyname chỉ bao gồm chữ cái. Ví dụ: Nếu cung cấp địa chỉ email QTM@quantrimang.com thì đầu ra sẽ là: QTM. Trong trường hợp dữ liệu đầu vào không có sẵn, ta giả định nó được người dùng nhập vào từ giao diện điều khiển. Gợi ý: Sử dụng \\w để kiểm tra chữ cái. Code mẫu: Khi chạy code trên, nó sẽ nhận email được nhập vào bởi người dùng và trả về username của email, nếu nhập vào qtm@quantrimang.com bạn sẽ nhận được kết quả là qtm.",
+        "code": "# Bài Python 58, Code by Quantrimang.com\nimport re\nemailAddress = input()\npat2 = \"(\\w+)@((\\w+\\.)+(com))\"\nre2 = re.match(pat2,emailAddress)\nprint (re2.group(1))"
+    },
+    {
+        "title": "Bài 34:",
+        "description": "Yêu cầu: Tương tự như bài 58, nhưng lần này ta sẽ viết hàm để lấy companyname. Gợi ý: Code mẫu: Đây là kết quả khi chạy code bài 58 và 59:",
+        "code": "# Bài Python 59, Code by Quantrimang.com\nimport re\nemailAddress = input()\npat2 = \"(\\w+)@(\\w+)\\.(com)\"\nr2 = re.match(pat2,emailAddress)\nprint (r2.group(2))"
+    },
+    {
+        "title": "Bài 35:",
+        "description": "Yêu cầu: Viết một chương trình chấp nhận chuỗi từ được phân tách bằng khoảng trống và in các từ chỉ gồm chữ số. Ví du: Nếu những từ sau đây là đầu vào của chương trình: 3 quantrimang.com và 2 python. Đầu ra sẽ là ['3', '2'] Gợi ý: Code mẫu: Kết quả khi chạy code trên sẽ như sau:",
+        "code": "# Bài Python 60, Code by Quantrimang.com\nimport re\ns = input()\nprint (re.findall(\"\\d+\",s))"
+    },
+    {
+        "title": "Bài 36:",
+        "description": "Yêu cầu: In chuỗi Unicode \"Hello world\". Gợi ý: Code mẫu:",
+        "code": "# Bài Python 61, Code by Quantrimang.com\nunicodeString = u\"Hello world!\"\nprint (unicodeString)"
+    },
+    {
+        "title": "Bài 37:",
+        "description": "Yêu cầu: Viết chương trình để đọc chuỗi ASCII và chuyển đổi nó sang một chuỗi Unicode được mã hóa bằng UTF-8. Gợi ý: Code mẫu:",
+        "code": "# Bài Python 62, Code by Quantrimang.com\ns = input()\nv = s.encode() # có thể dùng v=s.encode('utf-8')\nprint (v)"
+    },
+    {
+        "title": "Bài 38:",
+        "description": "Yêu cầu: Viết comment đặc biệt để chỉ định file code nguồn Python ở Unicode. Code mẫu:",
+        "code": "# -*- coding: utf-8 -*-\n#Bài Python 63, Code by Quantrimang.com"
+    },
+    {
+        "title": "Bài 39:",
+        "description": "Yêu cầu: Viết một chương trình tính 1/2 + 2/3 + 3/4 + ... + n/(n + 1) với một n là số được nhập vào (n> 0). Ví dụ, nếu n là số sau đây được nhập vào: 5 Thì đầu ra phải là: 3.55 Gợi ý: Code mẫu:",
+        "code": "#Bài Python 64, Code by Quantrimang.com\nn=int(input(\"Nhập số n >0: \"))\nsum=0.0\nfor i in range(1,n+1):\n    sum += float(float(i)/(i+1))\nprint (sum)"
+    },
+    {
+        "title": "Bài 40:",
+        "description": "Yêu cầu: Viết chương trình tính: f(n)=f(n-1)+100 khi n>0 và f(0)=1, với n là số được nhập vào (n>0). Ví dụ: Nếu n được nhập vào là 5 thì đầu ra phải là 500. Gợi ý: Code mẫu:",
+        "code": "def f(n):\n    if n==0:\n        return 0\n    else:\n        return f(n-1)+100\n#Bài Python 65, Code by Quantrimang.com\nn=int(input(\"Nhập số n>0: \"))\nprint (f(n))"
+    },
+    {
+        "title": "Bài 41:",
+        "description": "Yêu cầu: Dãy Fibonacci được tính dựa trên công thức sau: f(n)=0 nếu n=0 f(n)=1 nếu n=1 f(n)=f(n-1)+f(n-2) nếu n>1 Hãy viết chương trình tính giá trị của f(n) với n là số được người dùng nhập vào. Ví dụ: Nếu n được nhập vào là 7 thì đầu ra của chương trình sẽ là 13. Gợi ý: Tương tự như bài 65, ta cũng sử dụng hàm đệ quy trong Python. Code mẫu:",
+        "code": "def f(n):\n    if n == 0: return 0\n    elif n == 1: return 1\n    else: return f(n-1)+f(n-2)\n#Bài Python 66, Code by Quantrimang.com\nn=int(input(\"Nhập số n: \"))\nprint (f(n))"
+    },
+    {
+        "title": "Bài 42:",
+        "description": "Yêu cầu: Dãy Fibonacci được tính dựa trên công thức sau: Hãy viết chương trình sử dụng list comprehension để in dãy Fibonacci dưới dạng tách biệt bằng dấu \",\", n được người dùng nhập vào. Ví dụ: Nếu n được nhập vào là 7 thì đầu ra của chương trình sẽ là: 0,1,1,2,3,5,8,13 Gợi ý: Code mẫu:",
+        "code": "def f(n):\n    if n == 0: return 0\n    elif n == 1: return 1\n    else: return f(n-1)+f(n-2)\n#Bài Python 67, Code by Quantrimang.com\nn=int(input(\"Nhập số n: \"))\nvalues = [str(f(x)) for x in range(0, n+1)]\nprint (\",\".join(values))"
+    },
+    {
+        "title": "Bài 43:",
+        "description": "Yêu cầu: Viết chương trình sử dụng generator để in số chẵn trong khoảng từ 0 đến n, cách nhau bởi dấu phẩy, n là số được nhập vào. Ví dụ nếu n=10 được nhập vào thì đầu ra của chương trình là: 0,2,4,6,8,10 Gợi ý: Code mẫu:",
+        "code": "def EvenGenerator(n):\n    i=0\n    while i<=n:\n        if i%2==0:\n            yield i\n        i+=1\n\n# Bài tập Python 68, Code by Quantrimang.com\nn=int(input(\"Nhập n: \"))\nvalues = []\nfor i in EvenGenerator(n):\n    values.append(str(i))\n\nprint (\"Các số chẵn trong khoảng 0 và n là: \",\",\".join(values))"
+    },
+    {
+        "title": "Bài 44:",
+        "description": "Yêu cầu: Viết chương trình sử dụng generator để in số chia hết cho 5 và 7 giữa 0 và n, cách nhau bằng dấu phẩy, n được người dùng nhập vào. Ví dụ: Nếu n=100 được nhập vào thì đầu ra của chương trình là: 0,35,70. Gợi ý: Như bài 68. Code mẫu:",
+        "code": "def NumGenerator(n):\n    for i in range(n+1):\n        if i%5==0 and i%7==0:\n            yield i\n# Bài tập Python 69, Code by Quantrimang.com\nn=int(input(\"Nhập n: \"))\nvalues = []\nfor i in NumGenerator(n):\n    values.append(str(i))\n\nprint (\"Các số chia hết cho 5 và 7 trong khoảng 0 và n là: \",\",\".join(values))"
+    },
+    {
+        "title": "Bài 45:",
+        "description": "Yêu cầu: Viết các lệnh assert để xác minh rằng tất cả các số trong list [2,4,6,8] là chẵn. Gợi ý: Code mẫu:",
+        "code": "li = [2,4,6,8]\nfor i in li:\n assert i%2==0\n# Code by Quantrimang.com"
+    },
+    {
+        "title": "Bài 46:",
+        "description": "Yêu cầu: Viết chương trình chấp nhận biểu thức toán học cơ bản do người dùng nhập vào từ bảng điều khiển và in kết quả ước lượng ra ngoài màn hình. Ví dụ: Nếu chuỗi sau là đầu vào của chương trình: 35 + 3 thì đầu ra sẽ lả: 38 Gợi ý: Code mẫu: Mấy bài này khá đơn giản và kết quả đầu ra cũng dễ hình dung nên mình không chụp kết quả nữa nhé, code thì test trên Python 3.6.2 đảm bảo chạy ngon rồi.",
+        "code": "expression = input(\"Nhập biểu thức cần tính: \")\n# Code by Quantrimang.com\nprint (eval(expression))"
+    },
+    {
+        "title": "Bài 47:",
+        "description": "Yêu cầu: Viết hàm tìm kiếm nhị phân để tìm các item trong một list đã được sắp xếp. Hàm sẽ trả lại chỉ số của phần tử được tìm thấy trong list. Gợi ý: Code mẫu: Khi chạy code trên ta sẽ có kết quả đầu ra là 4 và -1, 4 là vị trí của 11 trong list li, và -1 nói lên rằng không có số 12 trong list li.",
+        "code": "import math\ndef bin_search(li, element):\n    bottom = 0\n    top = len(li)-1\n    index = -1\n    while top>=bottom and index==-1:\n        mid = int(math.floor((top+bottom)/2.0))\n        if li[mid]==element:\n            index = mid\n        elif li[mid]>element:\n            top = mid-1\n        else:\n            bottom = mid+1\n    return index\n# Code by Quantrimang.com\nli=[2,5,7,9,11,17,222]\nprint (bin_search(li,11))\nprint (bin_search(li,12))"
+    },
+    {
+        "title": "Bài 48:",
+        "description": "Yêu cầu: Tạo một số thập phân ngẫu nhiên, có giá trị nằm trong khoảng từ 10 đến 100 bằng cách sử dụng module math của Python. Gợi ý: Code mẫu: Vì hàm trên được sử dụng để tạo số thập phân ngẫu nhiên, nằm trong khoảng từ 10 đến 100, nên mỗi lần bạn chạy code sẽ cho ra một kết quả khác nhau, là các số thập phân ngẫu nhiên thỏa mãn điều kiện nằm trong khoảng 10 đến 100.",
+        "code": "import random\nprint (random.random()*100)\n# Code by Quantrimang.com"
+    },
+    {
+        "title": "Bài 49:",
+        "description": "Yêu cầu: Tạo một số thập phân ngẫu nhiên, có giá trị nằm trong khoảng 5 đến 95, sử dụng module math của Python. Gợi ý: Code mẫu: Code bài 73, 74 mình thấy chưa chuẩn lắm, mong nhận được góp ý của các bạn ở phần bình luận nhé!",
+        "code": "import random\nprint (random.random()*100-5)\n# Code by Quantrimang.com"
+    },
+    {
+        "title": "Bài 50:",
+        "description": "Yêu cầu: Viết chương trình xuất ra một số chẵn ngẫu nhiên trong khoảng 0 đến 10 (bao gồm cả 0 và 10), sử dụng module random và list comprehension. Gợi ý: Code mẫu:",
+        "code": "import random\nprint (random.choice([i for i in range(11) if i%2==0]))\n# Code by Quantrimang.com"
+    },
+    {
+        "title": "Bài 51:",
+        "description": "Yêu cầu: Vui lòng viết chương trình để xuất một số ngẫu nhiên, chia hết cho 5 và 7, từ 0 đến 200 (gồm cả 0 và 200), sử dụng module random và list comprehension. Gợi ý: Code mẫu: Khi chạy code trên, bạn sẽ nhận được kết quả đầu ra là số bất kỳ, nằm trong đoạn [0;200] chia hết cho cả 5 và 7.",
+        "code": "import random\nprint (random.choice([i for i in range(201) if i%5==0 and i%7==0]))\n#Code by Quantrimang.com"
+    },
+    {
+        "title": "Bài 52:",
+        "description": "Yêu cầu: Vui lòng viết chương trình để tạo một list với 5 số ngẫu nhiên từ 100 đến 200. Gợi ý: Code mẫu: Khi chạy code trên bạn sẽ nhận được 1 list, có 5 giá trị ngẫu nhiên, nằm trong đoạn [100;200]. Nếu đề bài yêu cầu số ngẫu nhiên nằm trong đoạn [0;100] thì range() trong đoạn trên bạn chỉ cần viết là range(100).",
+        "code": "import random\nprint (random.sample(range(100,201), 5))\n#Code by Quantrimang.com"
+    },
+    {
+        "title": "Bài 53:",
+        "description": "Yêu cầu: Viết chương trình tạo ngẫu nhiên list gồm 5 số chẵn nằm trong đoạn [100;200]. Gợi ý: Code mẫu:",
+        "code": "import random\nprint (random.sample([i for i in range(100,201) if i%2==0], 5))\n#Code by Quantrimang.com"
+    },
+    {
+        "title": "Bài 54:",
+        "description": "Yêu cầu: Viết chương trình để tạo ngẫu nhiên một list gồm 5 số, chia hết cho 5 và 7, nằm trong đoạn [1;1000]. Gợi ý: Code mẫu:",
+        "code": "import random\nprint (random.sample([i for i in range(1,1001) if i%5==0 and i%7==0], 5))\n#Code by Quantrimang.com"
+    },
+    {
+        "title": "Bài 55:",
+        "description": "Yêu cầu: Viết chương trình để in một số nguyên ngẫu nhiên từ 7 đến 15. Gợi ý: Code mẫu:",
+        "code": "import random\nprint (random.randrange(7,16))\n#Code by Quantrimang.com"
+    },
+    {
+        "title": "Bài 56:",
+        "description": "Yêu cầu: Viết chương trình để nén và giải nén string \"\"hello world!hello world!hello world!hello world!\". Gợi ý: Code mẫu: Với Python 2, code mẫu sẽ như sau: Tuy nhiên, trong Python 3, bạn phải gọi encode() và chỉ định kiểu mã hóa, giả sử là utf-8 thì yêu cầu trên sẽ được code như sau:",
+        "code": "import zlib\ns = \"hello world!hello world!hello world!hello world!\"\nt = zlib.compress(s.encode(\"utf-8\"))\nprint (t)\nprint (zlib.decompress(t))\n#Code by Quantrimang.com"
+    },
+    {
+        "title": "Bài 57:",
+        "description": "Yêu cầu: Bạn hãy viết một chương trình để in thời gian thực thi (running time of execution) phép tính \"1+1\" 100 lần. Gợi ý: Code mẫu: Khi chạy code trên, bạn cần phải đợi để phép tính trên được thực hiện xong rồi chương trình mới in ra thời gian thực thi. Ban đầu khi mới chạy code, cảm giác như không có gì đang được thực thi.",
+        "code": "from timeit import Timer\nt = Timer(\"for i in range(100):1+1\")\nprint (t.timeit())"
+    },
+    {
+        "title": "Bài 58:",
+        "description": "Yêu cầu: Viết chương trình để trộn và in list [3,6,7,8]. Gợi ý: Code mẫu: Khi code được thực thi, mỗi lần chạy sẽ cho ra một list với thứ tự các số được trộn ngẫu nhiên.",
+        "code": "from random import shuffle\nli = [3,6,7,8]\n\n#Code by Quantrimang.com\nshuffle(li)\nprint (li)"
+    },
+    {
+        "title": "Bài 59:",
+        "description": "Yêu cầu: Viết một chương trình để tạo tất cả các câu có chủ ngữ nằm trong [\"Anh\",\"Em\"], động từ nằm trong [\"Chơi\",\"Yêu\"] và tân ngữ là [\"Bóng đá\",\"Xếp hình\"]. Gợi ý: Code mẫu: Khi chạy code trên ta sẽ có kết quả như sau:",
+        "code": "Anh Chơi Bóng đá.\nAnh Chơi Xếp hình.\nAnh Yêu Bóng đá.\nAnh Yêu Xếp hình.\nEm Chơi Bóng đá.\nEm Chơi Xếp hình.\nEm Yêu Bóng đá.\nEm Yêu Xếp hình."
+    },
+    {
+        "title": "Bài 60:",
+        "description": "Yêu cầu: Viết chương trình in list sau khi xóa các số chẵn trong [5,6,77,45,22,12,24]. Gợi ý: Code mẫu: Kết quả khi chạy code trên sẽ là:",
+        "code": "[5, 77, 45]"
+    },
+    {
+        "title": "Bài 61:",
+        "description": "Yêu cầu: Sử dụng list comprehension để viết chương trình in list sau khi đã loại bỏ các số chia hết cho 5 và 7 trong [12,24,35,70,88,120,155]. Gợi ý: Code mẫu: Ta sẽ có kết quả như sau:",
+        "code": "[12, 24, 88, 120, 155]"
+    },
+    {
+        "title": "Bài 62:",
+        "description": "Yêu cầu: Viết chương trình in list sau khi đã xóa số thứ 0, thứ 2, thứ 4, thứ 6 trong [12,24,35,70,88,120,155]. Gợi ý: Code mẫu: Code trên sẽ trả về kết quả:",
+        "code": "[24, 70, 120]"
+    },
+    {
+        "title": "Bài 63:",
+        "description": "Yêu cầu: Viết chương trình tạo mảng 3D 3*5*8 có mỗi phần tử là 0. Gợi ý: Code mẫu: Kết quả:",
+        "code": "[[[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]], [[0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0]], [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0],\n[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]]]"
+    },
+    {
+        "title": "Bài 64:",
+        "description": "Yêu cầu: Viết chương trình in list sau khi đã xóa số ở vị trí thứ 0, thứ 5, thứ 5 trong [12,24,35,70,88,120,155]. Gợi ý: Code mẫu: Kết quả:",
+        "code": "[24, 35, 70, 155]"
+    },
+    {
+        "title": "Bài 65:",
+        "description": "Yêu cầu: Viết chương trình in list sau khi đã xóa giá trị 24 trong [12,24,35,24,88,120,155]. Gợi ý: Code mẫu: Kết quả:",
+        "code": "[12, 35, 88, 120, 155]"
+    },
+    {
+        "title": "Bài 66:",
+        "description": "Yêu cầu: Với 2 list cho trước: [1,3,6,78,35,55] và [12,24,35,24,88,120,155], viết chương trình để tạo list có phần tử là giao của 2 list đã cho. Gợi ý: Sử dụng set() và \"&=\" để thiết lập điểm giao. Code mẫu: Kết quả:",
+        "code": "[120, 35, 12]"
+    },
+    {
+        "title": "Bài 67:",
+        "description": "Yêu cầu: Viết chương trình in list từ list [12,24,35,24,88,120,155,88,120,155], sau khi đã xóa hết các giá trị trùng nhau. Gợi ý: Code mẫu: Kết quả:",
+        "code": "List sau khi xóa giá trị trùng là: [12, 15, 24, 35, 88, 120, 155]"
+    },
+    {
+        "title": "Bài 68:",
+        "description": "Yêu cầu: Định nghĩa class Nguoi và 2 class con của nó: Nam, Nu. Tất cả các class có method \"getGender\" có thể in \"Nam\" cho class Nam và \"Nữ\" cho class Nu. Gợi ý: Code mẫu: Kết quả:",
+        "code": "Nam\nNữ"
+    },
+    {
+        "title": "Bài 69:",
+        "description": "Yêu cầu: Viết chương trình đếm và in số ký tự của chuỗi do người dùng nhập vào. Ví dụ: Nếu chuỗi nhập vào là quantrimang.com thì đầu ra sẽ là: q,1u,1a,2n,2t,1r,1i,1m,2g,1.,1c,1o,1 Gợi ý: Code mẫu: Kết quả:",
+        "code": "Nhập chuỗi cần đếm ký tự: quantrimang.com\nq,1\nu,1\na,2\nn,2\nt,1\nr,1\ni,1\nm,2\ng,1\n.,1\nc,1\no,1"
+    },
+    {
+        "title": "Bài 70:",
+        "description": "Yêu cầu: Viết chương trình nhận chuỗi đầu vào từ giao diện điều khiển và in nó theo thứ tự ngược lại. Ví dụ nếu chuỗi nhập vào là: i love you Thì kết quả đầu ra là: uoy evol i Gợi ý: Code mẫu:",
+        "code": "chuoi=input(\"Nhập chuỗi vào đây: \")\n# Code by Quantrimang.com\nchuoi = chuoi[::-1]\nprint (chuoi)"
+    },
+    {
+        "title": "Bài 71:",
+        "description": "Yêu cầu: Viết chương trình nhận chuỗi do người dùng nhập vào và in các ký tự có chỉ số chẵn. Ví dụ: Nếu chuỗi sau được nhập vào: q1u2a3n4t5r6i7m8a9n4g5.6c7o8m, thì đầu ra sẽ là: quantrimang.com. Gợi ý: Code mẫu: Kết quả:",
+        "code": "Nhập chuỗi vào đây: q1u2a3n4t5r6i7m8a9n4g5.6c7o8m\nquantrimang.com"
+    },
+    {
+        "title": "Bài 72:",
+        "description": "Yêu cầu: Viết chương trình in tất cả các hoán vị của [1,2,3]. Gợi ý: Code mẫu: Kết quả:",
+        "code": "[(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)]"
+    },
+    {
+        "title": "Bài 73:",
+        "description": "Yêu cầu: Viết chương trình để giải 1 câu đố cổ của Trung Quốc: Một trang trại thỏ và gà có 35 đầu, 94 chân, hỏi số thỏ và gà là bao nhiêu? Gợi ý: Code mẫu: Kết quả:",
+        "code": "(23, 12)"
+    },
+    {
+        "title": "Bài 74:",
+        "description": "Yêu cầu: Viết chương trình Python tính tổng tất cả số nguyên dương và âm trong một chuỗi được cung cấp. Chuỗi gốc: -100#^sdfkj8902w3ir021@swf-20 Tính tổng tất cả số nguyên âm và dương nằm trong chuỗi sau: Cách 1: Code Python: Kết quả mẫu: Sơ đồ  Cách 2: Code Python: Kết quả mẫu: Sơ đồ:  Tạm thế đã nhé, mình đang tìm thêm nguồn bài, xem có các bài tập Python nâng cao hoặc những yêu cầu chương trình phức tạp hơn không. Bạn bookmark lại để check bài mới thường xuyên nhé, nếu có nguồn bài tập Python hay thì nhớ chia sẻ bằng cách bình luận bên dưới bài viết nhé! Các bài tập trên được tham khảo, trích dẫn lại từ: Xem thêm:",
+        "code": "Original string:\n-100#^sdfkj8902w3ir021@swf-20\n\nSum of all positive, negative integers present in the said string:\nPositive values: 9046\nNegative values: -120"
+    },
+    {
+        "title": "Viết một chương trình yêu cầu người dùng nhập chiều rộng và cao của hình chữ nhật, sau đó xuất kết quả diện tích và chu vi của hình chữ nhật đó.",
+        "description": "Code mẫu 1: Code mẫu 2:",
+        "code": "//By Fate-X\n#include<iostream>\n\nusing std::cout;\nusing std::cin;\n\nint main(){\n    double width, height, area, perimeter;\n    \n    cout << \"This program takes the height and width (when given) of a rectangle and returns\\nits area and perimeter.\\n\\n\";\n    cout << \"Input Width: \";\n         \n    cin >> width;\n    cin.ignore();\n    \n    cout << \"Input height: \";\n    \n    cin >> height;\n    cin.ignore();\n    \n    area = height * width;\n    perimeter = 2 * (width + height);\n    \n    cout << \"\\n\\nArea: \" << area << \"\\n\";\n    cout << \"Perimeter: \" << perimeter << \"\\n\\n\";\n    \n    cout << \"Please press the 'return' key to exit the program.\";\n    cin.get();\n    \n    return 0;\n}"
+    },
+    {
+        "title": "Viết một chương trình trong C++ để tìm kích thước của các kiểu dữ liệu cơ bản sau:",
+        "description": "sizeof(char) : 1 bytesizeof(short) : 2 bytesizeof(int) : 4 bytesizeof(long) : 8 bytesizeof(long long): 8 bytesizeof(float): 4 bytesizeof(double): 8 bytesizeof(long double) : 16 bytesizeof(bool) : 1 byte Code mẫu:",
+        "code": "#include <iostream>\nusing namespace std;\n \nint main() \n{\n    cout << \"\\n\\n Find Size of fundamental data types :\\n\";\n\tcout << \"------------------------------------------\\n\";\n   cout << \" The sizeof(char) is :          \" << sizeof(char) << \" bytes \\n\" ;\n   cout << \" The sizeof(short) is :         \" << sizeof(short) << \" bytes \\n\" ;\n   cout << \" The sizeof(int) is :           \" << sizeof(int) << \" bytes \\n\" ;\n   cout << \" The sizeof(long) is :          \" << sizeof(long) << \" bytes \\n\" ;\n   cout << \" The sizeof(long long) is :     \" << sizeof(long long) << \" bytes \\n\";\n   cout << \" The sizeof(float) is :         \" << sizeof(float) << \" bytes \\n\" ;\n   cout << \" The sizeof(double) is :        \" << sizeof(double) << \" bytes \\n\";\n   cout << \" The sizeof(long double) is :   \" << sizeof(long double) << \" bytes \\n\";\n   cout << \" The sizeof(bool) is :          \" << sizeof(bool) << \" bytes \\n\\n\";\n   return 0;\n}"
+    },
+    {
+        "title": "Viết một chương trình C++ để in nội dung chào mừng trong một dòng riêng.",
+        "description": "Code mẫu:",
+        "code": "#include <iostream>\nusing namespace std;\n \nint main()\n{\n    cout << \"\\n\\n Print a welcome text in a separate line :\\n\";\n\tcout << \"----------------------------------------------\\n\";\n    cout << \" Welcome to \\n\" ;\n    cout << \" w3resource.com \"<<endl ;\n    \n}"
+    },
+    {
+        "title": "Viết chương trình C++ để in các dòng text đã cho trước",
+        "description": "Bài tập: Viết chương trình C++ để in các dòng sau: Toi nam nay 18 tuoi. Toi co nhieu hoai bao muon theo duoi. Code mẫu:",
+        "code": "#include <cstdlib>\n#include <iostream> \nusing namespace std; \nint main(int argc, char *argv[]) \n{ \n int age; \n age=10; \n cout<<\" Toi nam nay \"<<age<<\" tuoi.\\n\"; \n cout<<\" Toi co nhieu hoai bao muon theo duoi.\\n\"; \n \n return 0; \n}"
+    },
+    {
+        "title": "Viết chương trình C++ để in các dấu sao theo yêu cầu đã cho.",
+        "description": "Yêu cầu: Viết chương trình C++ để in các dấu sao theo dạng sau: * ** *** **** ***** ****** Code mẫu:",
+        "code": "#include <cstdlib> \n#include <iostream> \nusing namespace std; \n  \nint main(int argc, char *argv[]) \n{ \n    cout<<\"*\\n\"; \n    cout<<\"**\\n\"; \n    cout<<\"***\\n\"; \n    cout<<\"****\\n\"; \n    cout<<\"*****\\n\";\n    cout<<\"******\\n\"; \n    return 0; \n}"
+    },
+    {
+        "title": "Viết chương trình C++ để khai báo 2 biến nguyên và một biến thực, sau đó in kết quả trên màn hình.",
+        "description": "Yêu cầu: Viết chương trình C++ để khai báo hai biến nguyên, một biến thực và gán các giá trị tương ứng 8, 16 và 15.8 cho chúng. Sau đó in kết quả trên màn hình. Code mẫu:",
+        "code": "#include <cstdlib> \n#include <iostream> \n  \nusing namespace std; \n  \nint main(int argc, char *argv[]) \n{ \n    int a; \n    int b; \n    float c; \n    a=8; \n    b=16; \n    c=15.8; \n    cout<<\"a=\"<<a<<\"\\t\"<<\"b=\"<<b<<\"\\t\"<<\"c=\"<<c; \n    cout<<\"\\n\"; \n        \n    return 0; \n}"
+    },
+    {
+        "title": "Viết chương trình C++ yêu cầu người dùng nhập tên của họ, rồi in kết quả trên màn hình.",
+        "description": "Yêu cầu: Viết chương trình C++ để nhắc người dùng nhập tên của họ, sau đó in kết quả trên màn hình. Code mẫu:",
+        "code": "#include <cstdlib> \n#include <iostream> \n  \nusing namespace std;   \nint main(int argc, char *argv[]) \n{ \n    char name[20]; \n    cout<<\"Hay nhap ten cua ban:\"; \n    cin>>name; \n    cout<<\"Xin chao \"<<name<<\"! \\n\"; \n        \n    return 0; \n}"
+    },
+    {
+        "title": "Viết chương trình C++ để nhập ba số nguyên đã biết, sau đó in ra màn hình theo thứ tự tăng dần và giảm dần.",
+        "description": "Yêu cầu: Viết chương trình C++ yêu cầu người dùng nhập ba số nguyên, sau đó in 3 số đó ra màn hình theo thứ tự tăng dần. Code mẫu:",
+        "code": "#include <iostream>\n\nvoid Sort(int &a, int &b, int &c){\n    if(a>b){\n       int tmp = a;\n       a = b;\n       b = tmp;\n    }\n    if(a>c){\n       int tmp = a;\n       a=c;\n       c = tmp;\n    }\n    if(b>c){\n       int tmp = b;\n       b=c;\n       c=tmp;\n    }\n    return;\n}\n\nint main(){\n    std::cout << \"Nhap 3 so nguyen: \" << std::endl;\n    int num1;\n    int num2;\n    int num3;\n    std::cin >> num1 >> num2 >> num3;\n\n    int output1 = num1;\n    int output2 = num2;\n    int output3 = num3;\n\n    Sort(output1,output2,output3);\n\n    std::cout << num1 << \" \" << num2 << \" \" << num3 << \" \"\n         << \" khi sap xep tang dan: \";\n    std::cout << output1 << \" \" << output2 << \" \" << output3 << std::endl;\n\n    return 0;\n}"
+    },
+    {
+        "title": "Viết chương trình C++ để in một số nguyên, một số thực, một ký tự đã được định nghĩa trước.",
+        "description": "Yêu cầu: In các giá trị sau trên màn hình chuẩn: Một số nguyên a, một số thực b và một ký tự c. Code mẫu:",
+        "code": "#include <iostream>\n#include <conio.h>\nusing namespace std; \nint main()\n{\n  \n  int a = 100;\n  float b = 5.1;\n  char c = 'q';\n  cout << \"a = \" << a << endl;\n  cout << \"b = \" << b << endl;\n  cout << \"c = \" << c << endl;\n  return 0;\n}"
+    },
+    {
+        "title": "Viết một chương trình trong C++ để in tổng của hai số.",
+        "description": "Code mẫu:",
+        "code": "#include <iostream>\nusing namespace std;\n \nint main()\n{\n    cout << \"\\n\\n In tổng của hai số :\\n\";\n\tcout << \"-----------------------------------\\n\";\n    cout << \" Tổng của 29 và 30 là : \"<< 29+30 <<\"\\n\\n\" ;\n}"
+    },
+    {
+        "title": "Tìm tổng, hiệu, tích và thương của hai số nguyên và in kết quả ra màn hình.",
+        "description": "Yêu cầu: Giả sử có 2 số nguyên cho trước, bạn hãy tính tổng, hiệu, tích và thương của hai số rồi in kết quả ra màn hình. Code mẫu:",
+        "code": "#include <iostream>\n#include <conio.h>\nusing namespace std; \nint main()\n{\n  \n  int x = 12;\n  int y = 5;\n  int tong, hieu, tich, thuong;\n  tong = x + y;\n  hieu = x - y;\n  tich = x * y;\n  thuong = x / y;\n  cout << \"Tong cua \" << x << \" va \" << y << \" la \" << tong << \".\" << endl;\n  cout << \"Hieu cua \" << x << \" va \" << y << \" la \" << hieu << \".\" << endl;\n  cout << \"Tich cua \" << x << \" va \" << y << \" la \" << tich << \".\" << endl;\n  cout << \"Thuong cua \" << x << \" va \" << y << \" la \" << thuong << \".\" << endl;\n  return 0;\n}"
+    },
+    {
+        "title": "Nhập hai số nguyên từ bàn phím, tính tổng, trung bình cộng của chúng và in ra màn hình.",
+        "description": "Yêu cầu: Nhập 2 số nguyên từ bàn phím, tính tổng, trung bình cộng của hai số đó, rồi in kết quả ra màn hình. Code mẫu: Kết quả:",
+        "code": "Nhap hai so nguyen:35Tong cua 3 va 5 la 8.Trung binh cong cua 3 va 5 la 4."
+    },
+    {
+        "title": "Tìm vận tốc cuối cùng và in kết quả ra màn hình khi biết vận tốc ban đầu, gia tốc và thời gian.",
+        "description": "Yêu cầu: Giả sử một chiếc ô tô có vận tốc ban đầu v0, gia tốc a và thời gian t. Viết chương trình C++ để tìm vận tốc cuối cùng của ô tô và in kết quả ra màn hình. Gợi ý: Code mẫu: Kết quả:",
+        "code": "Nhap van toc v0, gia toc a, thoi gian t:10 2 15Van toc cuoi cung la 40."
+    },
+    {
+        "title": "Viết chương trình C++ để tính các giá trị biểu thức và in kết quả theo yêu cầu.",
+        "description": "Yêu cầu: Viết chương trình C++ để in kết quả dưới dạng sau: Gợi ý: Code mẫu: Kết quả:",
+        "code": "#include <cstdlib>\n#include <iostream>\n \nusing namespace std;\n \nint main(int argc, char *argv[])\n{\nint x;\nint y;\nx=18;\ny=2;\ncout<<\"Ket qua tra ve:\\n\";\ncout<<\"Gtri x\\t\"<<\"Gtri y\\t\"<<\"Bieu thuc\\t\"<<\"Ket qua\\n\";\ncout<<x<<\" |\\t\"<<y<<\" |\\t\"<<\"A=y+3\\t\"<<\"\\t|\"<<\"A=\"<<y+3<<\"\\n\";\ncout<<x<<\" |\\t\"<<y<<\" |\\t\"<<\"B=y-2\\t\"<<\"\\t|\"<<\"B=\"<<y-2<<\"\\n\";\ncout<<x<<\" |\\t\"<<y<<\" |\\t\"<<\"C=y*5\\t\"<<\"\\t|\"<<\"C=\"<<y*5<<\"\\n\";\ncout<<x<<\" |\\t\"<<y<<\" |\\t\"<<\"D=x/y\\t\"<<\"\\t|\"<<\"D=\"<<(float)(x/y)<<\"\\n\";\ncout<<x<<\" |\\t\"<<y<<\" |\\t\"<<\"E=x%y\\t\"<<\"\\t|\"<<\"E=\"<<x%y<<\"\\n\";\n\nreturn 0;\n}"
+    },
+    {
+        "title": "Viết chương trình C++ để tính điểm thi.",
+        "description": "Yêu cầu: Viết chương trình để nhập điểm kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ, sau đó tính tổng điểm và in kết quả ra màn hình dưới dạng sau: Code mẫu: Kết quả:",
+        "code": "#include <cstdlib> \n#include <iostream> \n#include<iomanip> \nusing namespace std; \nint main(int argc, char *argv[]) \n{ \n    float q1; \n    float q2; \n    float q3; \n    float tongdiemkt; \n    float diemgk; \n    float diemck; \n    float tongdiem; \n    cout<<\"==========Diem kiem tra================\\n\"; \n    cout<<\"Nhap diem kiem tra 1:\"; \n    cin>>q1; \n    cout<<\"\\n\"; \n    cout<<\"Nhap diem kiem tra 2:\"; \n    cin>>q2; \n    cout<<\"\\n\"; \n    cout<<\"Nhap diem kiem tra 3:\"; \n    cin>>q3; \n    cout<<\"\\n\"; \n    cout<<\"==========Diem thi giua ky=============\\n\"; \n    cout<<\"Nhap diem thi giua ky:\"; \n    cin>>diemgk; \n    cout<<\"\\n\"; \n    cout<<\"===========Diem thi cuoi ky=============\\n\"; \n    cout<<\"Nhap diem thi cuoi ky:\"; \n    cin>>diemck; \n    cout<<\"\\n\"; \n    tongdiemkt=q1+q2+q3; \n    tongdiem=tongdiemkt+diemgk+diemck; \n    cout<<\"Tong diem kiem tra:\"<<right<<setw(5)<<tongdiemkt; \n    cout<<\"\\n\"; \n    cout<<\"Diem thi giua ky:\"<<right<<setw(7)<<diemgk; \n    cout<<\"\\n\"; \n    cout<<\"Diem thi cuoi ky:\"<<right<<setw(10)<<diemck; \n    cout<<\"\\n\"; \n    cout<<\".................................\\n\"; \n    cout<<\"Tong diem:\"<<right<<setw(11)<<tongdiem; \n    cout<<\"\\n\"; \n    return 0; \n}"
+    },
+    {
+        "title": "Nhập 2 số x, y và tính theo yêu cầu",
+        "description": "Yêu cầu: Viết chương trình C++ để nhập hai số nguyên x, y, sau đó tính: p=x*y, s=x+y, q=s2+p(s-x)*(p+y) và in kết quả ra màn hình. Code mẫu: Kết quả:",
+        "code": "Nhap gia tri x: 5 Nhap gia tri y: 10 Gia tri bieu thuc q la: 30225"
+    },
+    {
+        "title": "Bài tập C++ vận dụng nạp chồng toán tử nhị phân để cộng, trừ hai số phức",
+        "description": "Yêu cầu: Sử dụng khái niệm nạp chồng toán tử để cộng và trừ hai số phức. Gợi ý: Để sử dụng nạp chồng toán tử trong giải bài tập cộng, trừ số phức này, bạn cần làm những việc sau: Khai báo lớp sophuc: Bao gồm các biến và hàm thành viên Dùng hàm getvalue() để nhận phần thực, phần ảo của số phức Định nghĩa hàm operator+() để cộng hai số phức Định nghĩa hàm operator-() để trừ hai số phức Định nghĩa hàm display Khai báo các số phức i1, i2 và kết quả phép tính kq1, kq2 Gọi hàm getvalue để lấy phần thực và phần ảo cho i1, i2 Gọi hàm operator+() và operator-() để cộng, trừ hai số phức Gọi hàm display để hiển thị 2 số phức, 2 kết quả cộng, trừ Trả về các giá trị Code mẫu: Kết quả:",
+        "code": "#include<iostream>\n#include<conio.h>\nusing namespace std;  \nclass sophuc\n{\n              int a,b;\n    public:\n              void getvalue()\n              {\n                 cout<<\"Hãy nhập phần thực, phần ảo:\";\n                 cin>>a>>b;\n              }\n              sophuc operator+(sophuc i)\n              {\n                            sophuc q;\n                            q.a=a+i.a;\n                            q.b=b+i.b;\n                            return(q);\n              }\n              sophuc operator-(sophuc i)\n              {\n                            sophuc q;\n                            q.a=a-i.a;\n                            q.b=b-i.b;\n                            return(q);\n              }\n              void display()\n              {\n                            cout<<a<<\"+\"<<b<<\"i\"<<\"\\n\";\n              }\n};\n\nint main()\n{\n   \n   sophuc i1,i2,kq1,kq2;\n \n   i1.getvalue();\n   i2.getvalue();\n \n   kq1 = i1+i2;\n   kq2 = i1-i2;\n \n   cout<<\"Số phức đã nhập vào:\\n\";\n   i1.display();\n   i2.display();\n  \n   cout<<\"Kết quả cộng, trừ số phức:\\n\";\n   kq1.display();\n   kq2.display();\n  \n   return 0;\n}"
+    }
 ]
