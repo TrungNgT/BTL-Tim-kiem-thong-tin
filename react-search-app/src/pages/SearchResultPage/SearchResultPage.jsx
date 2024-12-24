@@ -35,7 +35,7 @@ const SearchResultPage = () => {
       setError(null);
 
       try {
-        const response = await fetch(`http://${localIP}:5000/api/search?query=${encodeURIComponent(searchTerm)}`);
+        const response = await fetch(`http://192.168.3.152:5000/api/search?query=${encodeURIComponent(searchTerm)}`);
         if (!response.ok) {
           throw new Error("Failed to fetch results");
         }

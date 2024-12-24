@@ -26,7 +26,7 @@ export default client;
 const run = async () => {
     try {
         await client.indices.exists({
-            index: "vietnamese_vinmec_doc"
+            index: "general_with_synonyms"
         });
         return true;
     } catch (error) {
@@ -48,7 +48,7 @@ app.get('/api/search', async (req, res) => {
   try {
     // Query Elasticsearch
     const response = await client.search({
-      index: "vietnamese_vinmec_doc", // Elasticsearch index name
+      index: "general_with_synonyms", // Elasticsearch index name
       body: {
         query: {
           query_string: {
