@@ -34,16 +34,11 @@ await client.indices.create({
             tokenizer: "vi_tokenizer",
             filter: [
               "lowercase",
-              "vietnamese_stops",
               "vietnamese_synonyms"
             ]
           }
         },
         filter: {
-          vietnamese_stops: {
-            type: "stop",
-            stopwords: ['và', 'những', 'đã', 'rất']
-          },
           vietnamese_synonyms: {
             type: "synonym",
             synonyms: synList
@@ -53,7 +48,7 @@ await client.indices.create({
     },
     mappings: {
       properties: {
-        content: {
+      title: {
           type: "text",
           analyzer: "my_vi_analyzer",
           search_analyzer: "my_vi_analyzer"
@@ -61,14 +56,9 @@ await client.indices.create({
         link: {
           type: "text",
           analyzer: "standard",
-          search_analyzer: "standard"   // standard to remove '/' but to remove '-' need to use filter with type: "pattern_replace"
+          search_analyzer: "standard"
         },
-        description: {
-          type: "text",
-          analyzer: "my_vi_analyzer",
-          search_analyzer: "my_vi_analyzer"
-        },
-        title: {
+        content: {
           type: "text",
           analyzer: "my_vi_analyzer",
           search_analyzer: "my_vi_analyzer"
